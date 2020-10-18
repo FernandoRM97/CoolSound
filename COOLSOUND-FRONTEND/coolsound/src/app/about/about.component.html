@@ -1,0 +1,54 @@
+<br/>
+<hr/>
+<br/>
+<div style="text-align: center;">
+    <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.4422424148192!2d-5.874638684527277!3d37.544643233138935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd125ce603bed70f%3A0xcd0e9d8b39d715f0!2sInstituto%20de%20Educaci%C3%B3n%20Secundaria%20Jacarand%C3%A1!5e0!3m2!1ses!2ses!4v1581593618459!5m2!1ses!2ses"
+        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</div>
+<br/>
+<hr/>
+<br/>
+<div class="flexbox-container">
+    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus malesuada placerat mi sit amet elementum. 
+            Maecenas id auctor mauris, suscipit tristique ex. Fusce ullamcorper urna et fringilla feugiat. Praesent eu 
+            dolor lobortis, pulvinar leo id, eleifend tortor. Sed tincidunt porttitor interdum. Sed ultrices sapien ut 
+            felis blandit condimentum. Ut ut libero turpis. Curabitur vel eros ligula. Donec vestibulum a eros non luctus. 
+            Etiam elit arcu, venenatis sed suscipit id, mollis non felis. Aliquam nec blandit felis. Vivamus volutpat 
+            tempus nisi nec bibendum.
+
+            Fusce in metus et eros pellentesque tincidunt ut sit amet turpis. Duis vitae lacinia mauris. Pellentesque 
+            et felis sit amet urna aliquet auctor. Nullam consequat dignissim dui, in sodales dui imperdiet ac. Duis 
+            sit amet suscipit neque. Pellentesque volutpat elit eget nisi volutpat imperdiet. Integer viverra luctus 
+            magna, ac gravida dolor egestas sed. Donec dapibus cursus eros in congue. Pellentesque at suscipit erat.</p>
+    </div>
+    <div class="form-container">
+        <h1>Contacto</h1>
+        <form formGroup="contactForm" (ngSubmit)="onSaveForm()">
+            <input type="text" formControlName="name" id="name" placeholder="Asunto" minlength="5">
+            <div class="alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                <div class="container-error-message" *ngIf="name.errors.required">
+                    El campo Asunto es obligatorio.
+                </div>
+                <div class="container-error-message" *ngIf="name.errors.minlength">
+                    El campo Asunto debe tener al menos {{name.errors.minlength.requiredLength}} caracteres.
+                </div>
+            </div>
+
+            <textarea formControlName="message" placeholder="Escribe tu mensaje aqui"></textarea>
+            <div class="alert-danger" *ngIf="message.invalid && (message.dirty || message.touched)">
+                <div class="container-error-message" *ngIf="message.errors.required">
+                    El campo Mensaje es obligatorio.
+                </div>
+                <div class="container-error-message" *ngIf="message.errors.minlength">
+                    El campo Mensaje debe tener al menos {{message.errors.minlength.requiredLength}} caracteres.
+                </div>
+            </div>
+
+            <button type="submit" class="btn-send">Enviar</button>
+        </form>
+    </div>
+</div>
+<br/>
+<hr/>
+<br/>

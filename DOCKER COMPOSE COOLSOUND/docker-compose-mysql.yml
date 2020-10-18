@@ -9,7 +9,7 @@ services:
      - C:\PRUEBA:/app:rw
    ports: 
      - 3307:3306
-   container_name: prueba
+   container_name: coolsound
    
   app:
     depends_on:

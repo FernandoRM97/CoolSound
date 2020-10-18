@@ -1,0 +1,69 @@
+<br>
+<hr>
+<br>
+
+<h3>Iphone</h3>
+<br>
+
+<div class="bloque">
+    <div class="card" style="width: 14rem; margin: 2px;" *ngFor="let phone of iphones">
+        <img class="card-img-top, telefono" src="{{ phone.url }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ phone.nombre }}</h5>
+            <button [routerLink]="['/', 'phone', phone.id+'I']" class="btn btn-danger">Más Información</button>
+        </div>
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+<h3>Samsung</h3>
+<br>
+
+<div class="bloque">
+    <div class="card" style="width: 14rem; margin: 2px;" *ngFor="let phone of moviles">
+        <img class="card-img-top, telefono" src="{{ phone.url }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ phone.nombre }}</h5>
+            <button [routerLink]="['/', 'phone', phone.id+'S']" class="btn btn-danger">Más Información</button>
+        </div>
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
+<h3>Huawei</h3>
+<br>
+
+<div class="bloque">
+    <div class="card" style="width: 14rem; margin: 2px;" *ngFor="let phone of huaweis">
+        <img class="card-img-top, telefono" src="{{ phone.url }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ phone.nombre }}</h5>
+            <button [routerLink]="['/', 'phone', phone.id+'H']" class="btn btn-danger">Más Información</button>
+        </div>
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
+<h3>LG</h3>
+<br>
+
+<div class="bloque">
+    <div class="card" style="width: 14rem; margin: 2px;" *ngFor="let phone of lgs">
+        <img class="card-img-top, telefono" src="{{ phone.url }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ phone.nombre }}</h5>
+            <button [routerLink]="['/', 'phone', phone.id+'L']" class="btn btn-danger">Más Información</button>
+        </div>
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
