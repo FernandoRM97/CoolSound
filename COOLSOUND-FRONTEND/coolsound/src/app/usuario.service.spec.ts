@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FireDbService } from './fire-db.service';
+import { UsuarioService } from './usuario.service';
 
-describe('FireDbService', () => {
+describe('UsuarioService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: FireDbService = TestBed.get(FireDbService);
+    const service: UsuarioService = TestBed.get(UsuarioService);
     expect(service).toBeTruthy();
   });
 });

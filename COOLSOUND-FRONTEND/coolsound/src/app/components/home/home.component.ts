@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FireDbService } from '../../fire-db.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +10,7 @@ export class HomeComponent implements OnInit {
   lista: string[] = ['/assets/cancionprueba.jpg', '/assets/cancionprueba.jpg',
   '/assets/cancionprueba.jpg', '/assets/cancionprueba.jpg'];
 
-  constructor(public db: FireDbService) { }
+  constructor() { }
 
   ngOnInit() {
 

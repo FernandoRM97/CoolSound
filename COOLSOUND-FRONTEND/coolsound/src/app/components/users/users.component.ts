@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FireDbService } from '../../fire-db.service';
 
 @Component({
   selector: 'app-users',
@@ -10,22 +9,9 @@ export class UsersComponent implements OnInit {
 
   users = [];
 
-  constructor(public db: FireDbService) { }
+  constructor() { }
 
   ngOnInit() {
-
-    this.db.getUsers().subscribe( snap => {
-      this.users = [];
-      snap.forEach( u => {
-
-        const user: any = u.payload.val();
-        user.key = u.key;
-
-        this.users.push(user);
-        console.log(u);
-      });
-      console.log('users: ', this.users);
-    });
 
   }
 

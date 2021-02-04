@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FireDbService } from '../../fire-db.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -14,8 +13,7 @@ export class AboutComponent implements OnInit {
   // tslint:disable-next-line: max-line-length
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  constructor(private dbData: FireDbService,
-              private router: Router) {
+  constructor(private router: Router) {
     this.contactForm = this.createFormGroup();
    }
 
