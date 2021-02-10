@@ -9,7 +9,7 @@ import { Usuario } from './usuario';
 
 export class UsuarioService {
 
-  private baseUrl = 'http://localhost:8080/usuarios/';
+  private baseUrl = '/usuarios/';
 
   user: Usuario = new Usuario();
   usuario: Usuario = new Usuario();
@@ -26,6 +26,7 @@ export class UsuarioService {
       this.user = data;
       if (this.user !== null) {
         sessionStorage.setItem('usuario', JSON.stringify(this.user));
+        location.reload();
       }
     },
        error => {
@@ -38,14 +39,16 @@ export class UsuarioService {
   /** Método para comprobar si un usuario está logueado */
 
   isUserLoggedIn() {
-    const usuario = sessionStorage.getItem('usuario');
-    return !(usuario === null);
+    let usuario ;
+    usuario = sessionStorage.getItem('usuario');
+    return usuario;
   }
 
   /** Método para cerrar sesión en la página */
 
   logOut() {
     sessionStorage.removeItem('usuario');
+    location.reload();
   }
 
   /** Método para añadir un nuevo usuario */

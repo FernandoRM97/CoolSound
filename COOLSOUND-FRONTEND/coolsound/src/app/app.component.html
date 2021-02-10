@@ -13,9 +13,16 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink="about" routerLinkActive="active" style="color: white">About Us</a>
             </li>
+            <li *ngIf="rol == 1" class="nav-item">
+                <a class="nav-link" routerLink="about" routerLinkActive="active" style="color: white">Prueba</a>
+            </li>
         </ul>
+        
+        <button *ngIf="!rol" class="right" routerLink="login" routerLinkActive="active"><img height="auto" width="20px" src="./assets/logo.png" alt="Login"><p style="color: white;"> LOGIN </p></button> <br/>
+        <button *ngIf="!rol" class="right" routerLink="register" routerLinkActive="active"><img height="auto" width="20px" src="./assets/add_user.png" alt="Registro"><p style="color: white;"> REGISTRO </p></button> <br/>
+        <button *ngIf="rol" class="right" (click)="logout()"><img height="auto" width="20px" src="./assets/close.png" alt="Logout"></button> <br/>
 
-        <button class="right" routerLink="login" routerLinkActive="active"><img height="auto" width="20px" src="./assets/logo.png" alt="Login"> LOGIN </button> <br/>
+
         <!-- <ng-template #login>
             <input type="text" class="form-control" style="margin: 1px; width: 200px;" name="email" placeholder="Escribe tu email..." [(ngModel)]="auth.email" />
             <input type="password" class="form-control" style="margin: 1px; width: 200px;" name="pass" placeholder="Escribe tu contraseña..." [(ngModel)]="auth.pass" />
@@ -38,7 +45,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <h6>CoolSound</h6>
-                <p class="text-justify">Web de tematica musical donde artistas anonimos pueden darse a conocer y donde conocer a nuevos artistas. Registrate, entra, comparte musica.</p>
+                <p class="text-justify">Web de tematica musical donde artistas {{rol}} anonimos pueden darse a conocer y donde conocer a nuevos artistas. Registrate, entra, comparte musica.</p>
             </div>
 
             <div class="col-xs-6 col-md-3 has-danger">

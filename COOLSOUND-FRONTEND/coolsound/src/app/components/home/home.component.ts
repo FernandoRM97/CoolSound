@@ -10,10 +10,12 @@ export class HomeComponent implements OnInit {
   lista: string[] = ['/assets/cancionprueba.jpg', '/assets/cancionprueba.jpg',
   '/assets/cancionprueba.jpg', '/assets/cancionprueba.jpg'];
 
-  constructor() { }
-
-  ngOnInit() {
-
+  
+  constructor() { 
   }
-
+  
+  ngOnInit() {
+    
+  }
+  
 }

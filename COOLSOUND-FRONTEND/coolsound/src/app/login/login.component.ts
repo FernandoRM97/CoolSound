@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators, NgForm} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { UsuarioService } from '../usuario.service';
@@ -27,10 +27,8 @@ export class LoginComponent implements OnInit {
   /** Método para loguearse un usuario */
   
   public userLogin(form) {
-    console.log('INFORMACION ANTES DE ENVIAR FORMULARIO',form.value.nombre, form.value.clave);
     this.us.loginUsuario(form.value.nombre, form.value.clave)
       .subscribe( data => {
-        console.log('INFORMACION DESPUES DE ENVIAR FORMULARIO', data);
         if (data === null) {
           Swal.fire({
             icon: 'error',
