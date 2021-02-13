@@ -34,6 +34,16 @@
                 </span>
             </div>
         </div>
+        <div class="form-group">
+            <label for="clave2">Repetir Clave</label>
+            <input type="password" class="form-control" formControlName="clave2" id="clave2" placeholder="Clave...">
+            <div class="alert alert-danger" *ngIf="(clave.touched) && (clave.invalid)" style="margin-top: 5px;">
+                <span *ngIf="clave.errors.required">La clave es un campo requerido</span>
+                <span *ngIf="clave.errors.minlength">
+                    Longitud mínima de la contraseña: {{clave.errors.minlength.requiredLength}}
+                </span>
+            </div>
+        </div>
         <br>
         <div class="message" *ngIf="mensajeError">
             <span>Usuario ya existente en la base de datos.</span>

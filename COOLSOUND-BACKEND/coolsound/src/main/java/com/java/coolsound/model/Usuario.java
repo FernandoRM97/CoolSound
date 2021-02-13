@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import com.sun.istack.NotNull;
 
@@ -53,11 +54,11 @@ public class Usuario {
 	@Column(name = "imagen")
 	@NotNull
 	private String imagen;
-	
+
 	/** Canciones del Usuario */
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	private Set<Cancion> canciones = new HashSet<Cancion>();
-	
+
 	/** Playlist del Usuario */
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	private Set<Playlist> playlists = new HashSet<Playlist>();
@@ -65,15 +66,15 @@ public class Usuario {
 	/** Comentarios de Canciones del Usuario */
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	private Set<ComentarioCancion> comentarioCanciones = new HashSet<ComentarioCancion>();
-	
+
 	/** Hilos del Usuario */
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	private Set<Hilo> hilos = new HashSet<Hilo>();
-	
-	/** Comentarios del Usuario en el Hilo del Foro*/
+
+	/** Comentarios del Usuario en el Hilo del Foro */
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	private Set<Comentario> comentarios = new HashSet<Comentario>();
-	
+
 	/** Getter del Codigo del Usuario */
 	public int getIdUsuario() {
 		return idUsuario;
@@ -124,7 +125,7 @@ public class Usuario {
 		this.rol = rol;
 	}
 
-	/** Getter de la Imagen del Usuario*/
+	/** Getter de la Imagen del Usuario */
 	public String getImagen() {
 		return imagen;
 	}
@@ -143,7 +144,7 @@ public class Usuario {
 	public void setCanciones(Set<Cancion> canciones) {
 		this.canciones = canciones;
 	}
-	
+
 	/** Getter de las Playlists */
 	public Set<Playlist> getPlaylists() {
 		return playlists;
@@ -201,8 +202,7 @@ public class Usuario {
 		this.hilos = hilos;
 		this.comentarios = comentarios;
 	}
-	
-	
+
 	public Usuario() {
 		super();
 	}
@@ -296,5 +296,5 @@ public class Usuario {
 			return false;
 		return true;
 	}
-	
+
 }

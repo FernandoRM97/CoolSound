@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from './usuario';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class UsuarioService {
   user: Usuario = new Usuario();
   usuario: Usuario = new Usuario();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   /** Método para loguearse, guardando los datos de un usuario en el sessionStorage */
 
@@ -48,7 +49,7 @@ export class UsuarioService {
 
   logOut() {
     sessionStorage.removeItem('usuario');
-    location.reload();
+    this.router.navigate(['home']);
   }
 
   /** Método para añadir un nuevo usuario */

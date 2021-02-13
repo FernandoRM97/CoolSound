@@ -26,9 +26,6 @@ export class AppComponent {
     this.us.logOut();
     this.rol = null;
     this.nombre = null;
-    window.location.reload();
-    console.log(this.rol);
-    console.log(this.nombre);
   }
 
   toggleNavbar() {
