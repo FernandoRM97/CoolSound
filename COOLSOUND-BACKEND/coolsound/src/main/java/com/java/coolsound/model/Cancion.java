@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sun.istack.NotNull;
 
 /**
@@ -57,15 +59,15 @@ public class Cancion {
 	@NotNull
 	private double valoracion;
 
-	/** Usuario */
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "USUARIO_ID")
-	private Usuario usuario;
-
 	/** Veces que se escucha la Cancion */
 	@Column(name = "vecesEscuchada", unique = true)
 	@NotNull
 	private double vecesEscuchada;
+
+	/** Usuario */
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "USUARIO_ID")
+	private Usuario usuario;
 
 	/** Playlist */
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -186,6 +188,11 @@ public class Cancion {
 		ComentarioCanciones = comentarioCanciones;
 	}
 
+	/** Constructor por defecto de la clase Cancion */
+	public Cancion() {
+		super();
+	}
+
 	/** Constructor de la clase Cancion */
 	public Cancion(int idCancion, String titulo, String genero, String musica, String portada, double valoracion,
 			Usuario usuario, double vecesEscuchada, Playlist playlist, Set<ComentarioCancion> comentarioCanciones) {
@@ -207,7 +214,7 @@ public class Cancion {
 	public String toString() {
 		return "Cancion [idCancion=" + idCancion + ", titulo=" + titulo + ", genero=" + genero + ", musica=" + musica
 				+ ", portada=" + portada + ", valoracion=" + valoracion + ", usuario=" + usuario + ", vecesEscuchada="
-				+ vecesEscuchada + ", playlist=" + playlist + ", ComentarioCanciones=" + ComentarioCanciones + "]";
+				+ vecesEscuchada + ", playlist=" + "playlist" + ", ComentarioCanciones=" + ComentarioCanciones + "]";
 	}
 
 	/** Hash Code la clase Cancion */

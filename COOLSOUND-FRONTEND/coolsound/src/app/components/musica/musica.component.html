@@ -1,0 +1,20 @@
+<br>
+<hr>
+<br>
+
+<h3 class="titulo">Canciones</h3>
+<br>
+
+<div class="bloque">
+    <div class="card" style="width: 14rem; margin: 2px;" *ngFor="let phone of iphones">
+        <img class="card-img-top, telefono" src="{{ phone.url }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ phone.nombre }}</h5>
+            <button [routerLink]="['/', 'phone', phone.id+'I']" class="btn btn-danger">Más Información</button>
+        </div>
+    </div>
+</div>
+
+<br>
+<hr>
+<br>

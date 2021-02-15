@@ -24,17 +24,30 @@
     </div>
     <div class="form-container">
         <h1>Contacto</h1>
-        <form formGroup="contactForm" (ngSubmit)="onSaveForm()">
-            <input type="text" formControlName="name" id="name" placeholder="Asunto" minlength="5">
+        <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
+            <input type="text" formControlName="name" id="name" placeholder="Tu nombre" minlength="5">
             <div class="alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
                 <div class="container-error-message" *ngIf="name.errors.required">
-                    El campo Asunto es obligatorio.
+                    El campo Nombre es obligatorio.
                 </div>
                 <div class="container-error-message" *ngIf="name.errors.minlength">
-                    El campo Asunto debe tener al menos {{name.errors.minlength.requiredLength}} caracteres.
+                    El campo Nombre debe tener al menos {{name.errors.minlength.requiredLength}} caracteres.
                 </div>
             </div>
-
+    
+            <input type="email" formControlName="email" placeholder="Tu email">
+            <div class="alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                <div class="container-error-message" *ngIf="email.errors.required">
+                    El campo Email es obligatorio.
+                </div>
+                <div class="container-error-message" *ngIf="email.errors.minlength">
+                    El campo Email debe tener al menos {{email.errors.minlength.requiredLength}} caracteres.
+                </div>
+                <div class="container-error-message" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.pattern">
+                    Debe ser un email válido.
+                </div>
+            </div>
+    
             <textarea formControlName="message" placeholder="Escribe tu mensaje aqui"></textarea>
             <div class="alert-danger" *ngIf="message.invalid && (message.dirty || message.touched)">
                 <div class="container-error-message" *ngIf="message.errors.required">
@@ -44,7 +57,7 @@
                     El campo Mensaje debe tener al menos {{message.errors.minlength.requiredLength}} caracteres.
                 </div>
             </div>
-
+    
             <button type="submit" class="btn-send">Enviar</button>
         </form>
     </div>

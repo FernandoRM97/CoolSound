@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sun.istack.NotNull;
 
 /**
@@ -31,17 +33,17 @@ public class Playlist {
 	@Column(name = "PLAYLIST_ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPlaylist;
-	
+
 	/** Nombre de la Playlist */
 	@Column(name = "NOMBRE", unique = true)
 	@NotNull
 	private String nombre;
-	
+
 	/** Usuario */
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "USUARIO_ID")
 	private Usuario usuario;
-	
+
 	/** Canciones de la Playlist */
 	@OneToMany(mappedBy = "playlist", cascade = CascadeType.ALL)
 	private Set<Cancion> canciones = new HashSet<Cancion>();
@@ -84,6 +86,11 @@ public class Playlist {
 	/** Set de las Canciones de la Playlist */
 	public void setCanciones(Set<Cancion> canciones) {
 		this.canciones = canciones;
+	}
+
+	/** Constructor por defecto de la clase Playlist */
+	public Playlist() {
+		super();
 	}
 
 	/** Constructor de la clase Playlist */
@@ -143,5 +150,5 @@ public class Playlist {
 			return false;
 		return true;
 	}
-	
+
 }

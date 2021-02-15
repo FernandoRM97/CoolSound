@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from './usuario.service';
+import { UsuarioService } from './services/usuario.service';
 
 
 @Component({
@@ -11,10 +11,12 @@ import { UsuarioService } from './usuario.service';
 export class AppComponent {
   navbarOpen = false;
 
-  rol: any;
+  rol: 0;
   nombre: any;
 
-  constructor(private us: UsuarioService) {}
+  constructor(private us: UsuarioService) {
+    this.rol = 0;
+  }
   
   ngOnInit() {
     let usuario = JSON.parse(sessionStorage.getItem('usuario'));  

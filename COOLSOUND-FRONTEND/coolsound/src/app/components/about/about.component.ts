@@ -36,7 +36,7 @@ export class AboutComponent implements OnInit {
 
   onSaveForm() {
     if (this.contactForm.valid) {
-      this.router.navigate(['/']);
+      this.router.navigate(['home']);
       this.onResetForm();
       Swal.fire({
         icon: 'success',
