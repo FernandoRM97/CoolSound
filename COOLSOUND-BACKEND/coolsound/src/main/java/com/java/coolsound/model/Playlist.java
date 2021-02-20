@@ -44,9 +44,9 @@ public class Playlist {
 	@JoinColumn(name = "USUARIO_ID")
 	private Usuario usuario;
 
-	/** Canciones de la Playlist */
-	@OneToMany(mappedBy = "playlist", cascade = CascadeType.ALL)
-	private Set<Cancion> canciones = new HashSet<Cancion>();
+//	/** Canciones de la Playlist */
+//	@OneToMany(mappedBy = "playlist", cascade = CascadeType.ALL)
+//	private Set<Cancion> canciones = new HashSet<Cancion>();
 
 	/** Getter de la Id de la Playlist */
 	public int getIdPlaylist() {
@@ -78,15 +78,15 @@ public class Playlist {
 		this.usuario = usuario;
 	}
 
-	/** Getter de las Canciones de la Playlist */
-	public Set<Cancion> getCanciones() {
-		return canciones;
-	}
-
-	/** Set de las Canciones de la Playlist */
-	public void setCanciones(Set<Cancion> canciones) {
-		this.canciones = canciones;
-	}
+//	/** Getter de las Canciones de la Playlist */
+//	public Set<Cancion> getCanciones() {
+//		return canciones;
+//	}
+//
+//	/** Set de las Canciones de la Playlist */
+//	public void setCanciones(Set<Cancion> canciones) {
+//		this.canciones = canciones;
+//	}
 
 	/** Constructor por defecto de la clase Playlist */
 	public Playlist() {
@@ -99,14 +99,14 @@ public class Playlist {
 		this.idPlaylist = idPlaylist;
 		this.nombre = nombre;
 		this.usuario = usuario;
-		this.canciones = canciones;
+//		this.canciones = canciones;
 	}
 
 	/** ToString de la clase Playlist */
 	@Override
 	public String toString() {
 		return "Playlist [idPlaylist=" + idPlaylist + ", nombre=" + nombre + ", usuario=" + usuario + ", canciones="
-				+ canciones + "]";
+				+ "canciones" + "]";
 	}
 
 	/** HashCode de la clase Playlist */
@@ -114,7 +114,7 @@ public class Playlist {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((canciones == null) ? 0 : canciones.hashCode());
+//		result = prime * result + ((canciones == null) ? 0 : canciones.hashCode());
 		result = prime * result + idPlaylist;
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
@@ -131,11 +131,11 @@ public class Playlist {
 		if (getClass() != obj.getClass())
 			return false;
 		Playlist other = (Playlist) obj;
-		if (canciones == null) {
-			if (other.canciones != null)
-				return false;
-		} else if (!canciones.equals(other.canciones))
-			return false;
+//		if (canciones == null) {
+//			if (other.canciones != null)
+//				return false;
+//		} else if (!canciones.equals(other.canciones))
+//			return false;
 		if (idPlaylist != other.idPlaylist)
 			return false;
 		if (nombre == null) {

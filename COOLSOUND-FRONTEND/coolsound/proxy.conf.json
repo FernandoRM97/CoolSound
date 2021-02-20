@@ -8,5 +8,10 @@
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
+},
+"/canciones": {
+  "target": "http://localhost:8080",
+  "secure": true,
+  "logLevel": "debug"
 }
 }

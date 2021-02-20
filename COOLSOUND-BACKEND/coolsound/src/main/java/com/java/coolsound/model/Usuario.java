@@ -1,5 +1,6 @@
 package com.java.coolsound.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,7 +14,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sun.istack.NotNull;
 
@@ -24,8 +24,10 @@ import com.sun.istack.NotNull;
  */
 @Entity
 @Table(name = "Usuarios")
-public class Usuario {
+public class Usuario implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	/** Codigo del usuario */
 	@Id
 	@Column(name = "idUsuario")
@@ -57,13 +59,13 @@ public class Usuario {
 	@NotNull
 	private String imagen;
 
-	/** Canciones del Usuario */
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-	private Set<Cancion> canciones = new HashSet<Cancion>();
+//	/** Canciones del Usuario */
+//	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+//	private Set<Cancion> canciones = new HashSet<Cancion>();
 
-	/** Playlist del Usuario */
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-	private Set<Playlist> playlists = new HashSet<Playlist>();
+//	/** Playlist del Usuario */
+//	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+//	private Set<Playlist> playlists = new HashSet<Playlist>();
 
 	/** Comentarios de Canciones del Usuario */
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
@@ -137,25 +139,25 @@ public class Usuario {
 		this.imagen = imagen;
 	}
 
-	/** Getter de la Cancion del Usuario */
-	public Set<Cancion> getCanciones() {
-		return canciones;
-	}
+//	/** Getter de la Cancion del Usuario */
+//	public Set<Cancion> getCanciones() {
+//		return canciones;
+//	}
+//
+//	/** Set de la Cancion del Usuario */
+//	public void setCanciones(Set<Cancion> canciones) {
+//		this.canciones = canciones;
+//	}
 
-	/** Set de la Cancion del Usuario */
-	public void setCanciones(Set<Cancion> canciones) {
-		this.canciones = canciones;
-	}
-
-	/** Getter de las Playlists */
-	public Set<Playlist> getPlaylists() {
-		return playlists;
-	}
-
-	/** Setter de las Playlists */
-	public void setPlaylists(Set<Playlist> playlists) {
-		this.playlists = playlists;
-	}
+//	/** Getter de las Playlists */
+//	public Set<Playlist> getPlaylists() {
+//		return playlists;
+//	}
+//
+//	/** Setter de las Playlists */
+//	public void setPlaylists(Set<Playlist> playlists) {
+//		this.playlists = playlists;
+//	}
 
 	/** Getter de los Comentarios de las Canciones */
 	public Set<ComentarioCancion> getComentarioCanciones() {
@@ -198,8 +200,8 @@ public class Usuario {
 		this.contraseña = contraseña;
 		this.rol = rol;
 		this.imagen = imagen;
-		this.canciones = canciones;
-		this.playlists = playlists;
+//		this.canciones = canciones;
+//		this.playlists = playlists;
 		this.comentarioCanciones = comentarioCanciones;
 		this.hilos = hilos;
 		this.comentarios = comentarios;
@@ -213,8 +215,8 @@ public class Usuario {
 	@Override
 	public String toString() {
 		return "Usuario [idUsuario=" + idUsuario + ", nombre=" + nombre + ", correo=" + correo + ", contraseña="
-				+ contraseña + ", rol=" + rol + ", imagen=" + imagen + ", canciones=" + canciones + ", playlists="
-				+ playlists + ", comentarioCanciones=" + comentarioCanciones + ", hilos=" + hilos + ", comentarios="
+				+ contraseña + ", rol=" + rol + ", imagen=" + imagen + ", canciones=" + "canciones" + ", playlists="
+				+ "playlists" + ", comentarioCanciones=" + comentarioCanciones + ", hilos=" + hilos + ", comentarios="
 				+ comentarios + "]";
 	}
 
@@ -223,7 +225,7 @@ public class Usuario {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((canciones == null) ? 0 : canciones.hashCode());
+//		result = prime * result + ((canciones == null) ? 0 : canciones.hashCode());
 		result = prime * result + ((comentarioCanciones == null) ? 0 : comentarioCanciones.hashCode());
 		result = prime * result + ((comentarios == null) ? 0 : comentarios.hashCode());
 		result = prime * result + ((contraseña == null) ? 0 : contraseña.hashCode());
@@ -232,7 +234,7 @@ public class Usuario {
 		result = prime * result + idUsuario;
 		result = prime * result + ((imagen == null) ? 0 : imagen.hashCode());
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		result = prime * result + ((playlists == null) ? 0 : playlists.hashCode());
+//		result = prime * result + ((playlists == null) ? 0 : playlists.hashCode());
 		result = prime * result + rol;
 		return result;
 	}
@@ -247,11 +249,11 @@ public class Usuario {
 		if (getClass() != obj.getClass())
 			return false;
 		Usuario other = (Usuario) obj;
-		if (canciones == null) {
-			if (other.canciones != null)
-				return false;
-		} else if (!canciones.equals(other.canciones))
-			return false;
+//		if (canciones == null) {
+//			if (other.canciones != null)
+//				return false;
+//		} else if (!canciones.equals(other.canciones))
+//			return false;
 		if (comentarioCanciones == null) {
 			if (other.comentarioCanciones != null)
 				return false;
@@ -289,11 +291,11 @@ public class Usuario {
 				return false;
 		} else if (!nombre.equals(other.nombre))
 			return false;
-		if (playlists == null) {
-			if (other.playlists != null)
-				return false;
-		} else if (!playlists.equals(other.playlists))
-			return false;
+//		if (playlists == null) {
+//			if (other.playlists != null)
+//				return false;
+//		} else if (!playlists.equals(other.playlists))
+//			return false;
 		if (rol != other.rol)
 			return false;
 		return true;

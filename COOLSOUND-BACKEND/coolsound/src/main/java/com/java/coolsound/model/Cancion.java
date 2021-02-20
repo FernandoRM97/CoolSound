@@ -1,5 +1,6 @@
 package com.java.coolsound.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,8 +16,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sun.istack.NotNull;
 
 /**
@@ -26,8 +25,10 @@ import com.sun.istack.NotNull;
  */
 @Entity
 @Table(name = "Canciones")
-public class Cancion {
+public class Cancion implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	/** Codigo de la Cancion */
 	@Id
 	@Column(name = "CANCION_ID")
@@ -214,7 +215,7 @@ public class Cancion {
 	public String toString() {
 		return "Cancion [idCancion=" + idCancion + ", titulo=" + titulo + ", genero=" + genero + ", musica=" + musica
 				+ ", portada=" + portada + ", valoracion=" + valoracion + ", usuario=" + usuario + ", vecesEscuchada="
-				+ vecesEscuchada + ", playlist=" + "playlist" + ", ComentarioCanciones=" + ComentarioCanciones + "]";
+				+ vecesEscuchada + ", playlist=" + playlist + ", ComentarioCanciones=" + ComentarioCanciones + "]";
 	}
 
 	/** Hash Code la clase Cancion */
