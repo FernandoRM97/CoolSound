@@ -1,6 +1,6 @@
 import { CssSelector } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { Cancion } from 'src/app/cancion';
+import { Cancion } from 'src/app/model/cancion';
 import { CancionService} from '../../services/cancion.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { CancionService} from '../../services/cancion.service';
 })
 export class MusicaComponent implements OnInit {
 
+  public p: number = 1;
   canciones: Cancion[];
 
   constructor(private cs: CancionService) { 

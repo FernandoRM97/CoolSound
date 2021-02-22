@@ -16,6 +16,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MusicaComponent } from './components/musica/musica.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MusicaComponent } from './components/musica/musica.component';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
     ],
   providers: [ ],
   bootstrap: [AppComponent]

@@ -24,7 +24,7 @@
     </div>
     <div class="form-container">
         <h1>Contacto</h1>
-        <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
+        <form [formGroup]="contactForm" method="POST" (ngSubmit)="onSaveForm()">
             <input type="text" formControlName="name" id="name" placeholder="Tu nombre" minlength="5">
             <div class="alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
                 <div class="container-error-message" *ngIf="name.errors.required">
@@ -35,7 +35,7 @@
                 </div>
             </div>
     
-            <input type="email" formControlName="email" placeholder="Tu email">
+            <input type="email" id="email" formControlName="email" placeholder="Tu email">
             <div class="alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
                 <div class="container-error-message" *ngIf="email.errors.required">
                     El campo Email es obligatorio.
@@ -48,7 +48,7 @@
                 </div>
             </div>
     
-            <textarea formControlName="message" placeholder="Escribe tu mensaje aqui"></textarea>
+            <textarea formControlName="message" id="message" placeholder="Escribe tu mensaje aqui"></textarea>
             <div class="alert-danger" *ngIf="message.invalid && (message.dirty || message.touched)">
                 <div class="container-error-message" *ngIf="message.errors.required">
                     El campo Mensaje es obligatorio.
@@ -58,7 +58,7 @@
                 </div>
             </div>
     
-            <button type="submit" class="btn-send">Enviar</button>
+            <button type="submit" [disabled]="!contactForm.valid" class="btn-send">Enviar</button>
         </form>
     </div>
 </div>

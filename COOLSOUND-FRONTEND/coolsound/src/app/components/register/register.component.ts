@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
-import { Usuario } from 'src/app/usuario';
+import { Usuario } from 'src/app/model/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router } from '@angular/router';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-register',

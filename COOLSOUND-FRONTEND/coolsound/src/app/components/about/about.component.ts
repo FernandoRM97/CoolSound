@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { EmailService } from 'src/app/services/email.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,7 +14,7 @@ export class AboutComponent implements OnInit {
   // tslint:disable-next-line: max-line-length
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private es: EmailService) {
     this.contactForm = this.createFormGroup();
    }
 
@@ -34,23 +35,45 @@ export class AboutComponent implements OnInit {
   this.contactForm.reset();
   }
 
-  onSaveForm() {
+  onSaveForm(form) {
+    const nombre = document.getElementById('name').value;
+    const correo = document.getElementById('email').value;
+    const mensaje = document.getElementById('message').value;
+
     if (this.contactForm.valid) {
       this.router.navigate(['home']);
       this.onResetForm();
-      Swal.fire({
-        icon: 'success',
-        title: 'Genial',
-        text: 'Mensaje enviado con éxito',
+      console.log('FWFWFWEFWEF', nombre, correo, mensaje);
+      this.es.enviarMail(nombre , correo, mensaje).subscribe(data => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Mensaje enviado con éxito.',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        this.contactForm.reset();
+      }, error => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Lo sentimos, ha ocurrido un problema al enviar el mensaje.',
+          text: 'Inténtelo de nuevo o mas tarde.',
+          timer: 1500
+        });
       });
-    } else {
-      console.log('ERROR', this.contactForm);
     }
 
   }
 
-  get name() { return this.contactForm.get('name'); }
-  get email() { return this.contactForm.get('email'); }
-  get message() { return this.contactForm.get('message'); }
+  get name() { 
+    return this.contactForm.get('name'); 
+  }
+
+  get email() { 
+    return this.contactForm.get('email');
+  }
+
+  get message() { 
+    return this.contactForm.get('message'); 
+  }
 
 }
