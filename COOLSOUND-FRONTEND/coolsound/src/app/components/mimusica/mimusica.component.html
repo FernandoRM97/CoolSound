@@ -1,0 +1,26 @@
+<br>
+<hr>
+<br>
+
+<h3 class="titulo">Mis Canciones</h3>
+<br>
+
+<div class="bloque">
+    <div class="card" *ngFor="let cancion of canciones | paginate: { itemsPerPage: 10, currentPage: p }">
+        <img class="card-img-top" src="{{ cancion?.portada }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">aa {{cancion?.titulo}}</h5>
+            <button class="btn btn-danger">Más Información</button>
+            <!-- [routerLink]="['/', 'phone', phone.id+'I']" -->
+        </div>
+    </div>
+</div>
+<br><br>
+<div style="text-align: center;">
+    <button class="btn btn-danger">Añadir Nueva Canción</button>
+</div>
+<br><br>
+<pagination-controls (pageChange)="p = $event" responsive="true" previousLabel="Previous" nextLabel="Next"></pagination-controls>
+<br>
+<hr>
+<br>

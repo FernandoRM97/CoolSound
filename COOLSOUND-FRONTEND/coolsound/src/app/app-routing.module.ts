@@ -7,6 +7,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { MusicaComponent } from './components/musica/musica.component';
+import { MimusicaComponent } from './components/mimusica/mimusica.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'categories', component: CategoriesComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'musica', component: MusicaComponent}
+  { path: 'musica', component: MusicaComponent},
+  { path: 'mimusica', component: MimusicaComponent}
 ];
 
 @NgModule({

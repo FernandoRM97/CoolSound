@@ -3,4 +3,5 @@ export class Usuario {
     correo: any;
     contraseña: number;
     rol: number;
+    idUsuario: any;
 }

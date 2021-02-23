@@ -17,5 +17,10 @@ export class CancionService {
     return this.http.get<Cancion>(`${this.baseUrl}` + 'getcanciones/');
   }
 
+  /** Método para sacar las canciones de BD */
+  miCancion(id: any): Observable<any> {
+    return this.http.get<Cancion>(`${this.baseUrl}` + 'getcanciones/' + id);
+  }
+
 }
 

@@ -21,6 +21,8 @@ export class MusicaComponent implements OnInit {
     this.cs.cancion().subscribe(data => {
       this.canciones = data;
       console.log(this.canciones);
-  })}
+    })
   }
+
+}
 

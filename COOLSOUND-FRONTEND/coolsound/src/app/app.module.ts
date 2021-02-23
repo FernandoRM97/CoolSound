@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MusicaComponent } from './components/musica/musica.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MimusicaComponent } from './components/mimusica/mimusica.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     UsersComponent,
     RegisterComponent,
     LoginComponent,
-    MusicaComponent
+    MusicaComponent,
+    MimusicaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,5 @@
 package com.java.coolsound.model;
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,9 +24,7 @@ import com.sun.istack.NotNull;
  */
 @Entity
 @Table(name = "Canciones")
-public class Cancion implements Serializable{
-
-	private static final long serialVersionUID = 1L;
+public class Cancion{
 	
 	/** Codigo de la Cancion */
 	@Id
