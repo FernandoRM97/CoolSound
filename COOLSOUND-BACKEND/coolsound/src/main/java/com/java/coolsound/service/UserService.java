@@ -51,4 +51,19 @@ public interface UserService {
 	 */
 	int eliminarUsuario(int codusu);
 	
+	/**
+	 * Cambiar foto perfil del usuario
+	 * 
+	 * @param url nueva imagen
+	 * @param id del Usuario	
+	 */
+	void changeUrl(int idUsuario, String url);
+	
+	/**
+	 * Cambiar foto perfil del usuario
+	 * 
+	 * @param url nueva imagen
+	 * @param id del Usuario	
+	 */
+	void changePass(int idUsuario, String pass);
 }

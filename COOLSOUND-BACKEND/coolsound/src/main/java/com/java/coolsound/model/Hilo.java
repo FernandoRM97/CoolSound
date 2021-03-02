@@ -1,6 +1,5 @@
 package com.java.coolsound.model;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -12,7 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.sun.istack.NotNull;
@@ -42,9 +40,9 @@ public class Hilo {
 	@JoinColumn(name = "USUARIO_ID")
 	private Usuario usuario;
 
-	/** Comentarios del Hilo */
-	@OneToMany(mappedBy = "hilo", cascade = CascadeType.ALL)
-	private Set<Comentario> comentarios = new HashSet<Comentario>();
+//	/** Comentarios del Hilo */
+//	@OneToMany(mappedBy = "hilo", cascade = CascadeType.ALL)
+//	private Set<Comentario> comentarios = new HashSet<Comentario>();
 
 	/** Getter del Id del Hilo */
 	public int getIdHilo() {
@@ -76,14 +74,19 @@ public class Hilo {
 		this.usuario = usuario;
 	}
 
-	/** Getter del Comentario */
-	public Set<Comentario> getComentarios() {
-		return comentarios;
-	}
+//	/** Getter del Comentario */
+//	public Set<Comentario> getComentarios() {
+//		return comentarios;
+//	}
+//
+//	/** Setter del Comentario */
+//	public void setComentarios(Set<Comentario> comentarios) {
+//		this.comentarios = comentarios;
+//	}
 
-	/** Setter del Comentario */
-	public void setComentarios(Set<Comentario> comentarios) {
-		this.comentarios = comentarios;
+	/** Constructor por defecto de la clase Hilo */
+	public Hilo() {
+		super();
 	}
 
 	/** Constructor de la clase Hilo */
@@ -92,14 +95,13 @@ public class Hilo {
 		this.idHilo = idHilo;
 		this.nombre = nombre;
 		this.usuario = usuario;
-		this.comentarios = comentarios;
+//		this.comentarios = comentarios;
 	}
 
 	/** ToString de la clase Hilo */
 	@Override
 	public String toString() {
-		return "Hilo [idHilo=" + idHilo + ", nombre=" + nombre + ", usuario=" + usuario + ", comentarios=" + comentarios
-				+ "]";
+		return "Hilo [idHilo=" + idHilo + ", nombre=" + nombre + ", usuario=" + usuario + "]";
 	}
 
 	/** HashCode de la clase Hilo */
@@ -107,7 +109,7 @@ public class Hilo {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((comentarios == null) ? 0 : comentarios.hashCode());
+//		result = prime * result + ((comentarios == null) ? 0 : comentarios.hashCode());
 		result = prime * result + idHilo;
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
@@ -124,11 +126,11 @@ public class Hilo {
 		if (getClass() != obj.getClass())
 			return false;
 		Hilo other = (Hilo) obj;
-		if (comentarios == null) {
-			if (other.comentarios != null)
-				return false;
-		} else if (!comentarios.equals(other.comentarios))
-			return false;
+//		if (comentarios == null) {
+//			if (other.comentarios != null)
+//				return false;
+//		} else if (!comentarios.equals(other.comentarios))
+//			return false;
 		if (idHilo != other.idHilo)
 			return false;
 		if (nombre == null) {

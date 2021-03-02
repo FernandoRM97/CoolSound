@@ -1,0 +1,21 @@
+<br>
+<hr>
+<br>
+<div class="container formRegister">
+    <h3 style="text-align: center;">Cambiar Foto de Perfil</h3>
+    <form [formGroup]="changeForm" (ngSubmit)="changeUrl()" method="POST">
+        <div class="form-group">
+            <label for="url">Introduce la nueva url de la Foto de Perfil</label>
+            <input type="text" class="form-control" formControlName="url" id="url" placeholder="URL...">
+            <div class="alert alert-danger" *ngIf="url.touched && url.invalid" style="margin-top: 5px;">
+                <span *ngIf="url.errors.required">La URL es un campo requerido</span>
+            </div>
+        </div>
+        <button [disabled]="!changeForm.valid" type="submit" class="btn btn-success" style="margin-right: 10px;">Cambiar</button>
+        <button type="button" class="btn btn-light" [routerLink]="'home'">Cancelar</button>
+    </form>
+</div>
+<div style="height: 20rem;"></div>
+<br>
+<hr>
+<br>

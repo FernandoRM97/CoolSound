@@ -32,7 +32,6 @@ public class UserServiceImpl implements UserService {
 	 */
 	@Override
 	public Usuario login(String nombre, String clave) {
-		System.out.println(userRepository.login(nombre, clave));
 		return userRepository.login(nombre, clave);
 	}
 
@@ -56,6 +55,38 @@ public class UserServiceImpl implements UserService {
 		userRepository.save(usuario);
 	}
 
+	/**
+	 * Cambiar foto de perfil de Usuario
+	 *
+	 * @param url de la nueva imagen
+	 * @param id del Usuario
+	 */
+	public void changeUrl( int idUsuario, String url) {
+		Usuario usuarioModificado = userRepository.getOne(idUsuario);
+		usuarioModificado.setImagen(url);
+		
+		if(usuarioModificado !=null) {
+			userRepository.save(usuarioModificado);	
+		}
+
+	}
+	
+	/**
+	 * Cambiar contraseña de perfil de Usuario
+	 *
+	 * @param pass del Usuario
+	 * @param id del Usuario
+	 */
+	public void changePass( int idUsuario, String pass) {
+		Usuario usuarioModificado = userRepository.getOne(idUsuario);
+		usuarioModificado.setContraseña(pass);
+		
+		if(usuarioModificado !=null) {
+			userRepository.save(usuarioModificado);	
+		}
+
+	}
+	
 
 //	/**
 //	 * Modificar usuario.

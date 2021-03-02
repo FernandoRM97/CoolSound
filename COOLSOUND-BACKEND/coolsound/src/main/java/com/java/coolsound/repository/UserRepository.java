@@ -41,4 +41,12 @@ public interface UserRepository extends JpaRepository<Usuario, Integer>{
 	@Query(value = "SELECT * FROM usuarios", nativeQuery = true)
 	List<Usuario> getAllUsuarios();
 	
+	/**
+	 * Cambiar foto de perfil del Usuario
+	 * 
+	 * @param url de la nueva imagen
+	 * @param idUsuario
+	 */
+	//@Query(value= "", nativeQuery = true)
+	
 }

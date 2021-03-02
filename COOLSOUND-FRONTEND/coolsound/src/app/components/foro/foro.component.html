@@ -1,0 +1,50 @@
+<br>
+<hr>
+<br>
+<h3 style="text-align: center;">FORO</h3>
+<br>
+
+<div class="bloque">
+    <table class="table table-striped"  width="100%">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Hilo</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let hilo of hilos | paginate: { itemsPerPage: 5, currentPage: p }">
+                <th scope="row">{{hilo.idHilo}}</th>
+                <td>{{hilo.nombre}}</td>
+                <td>
+                    <form action="/verHilo" method="GET">
+                        <input name="id" type="hidden" value="${hilo.idHilo}">
+                            <p>
+                                <input type="submit" class="btn btn-primary" value="Acceder">
+                            </p>
+                    </form>
+                </td>
+                <td *ngIf="rol == 2">
+                    <form action="/borrarHilo" method="POST">
+                        <input name="id" type="hidden" value="${hilo.idHilo}">
+                            <p>
+                                <input type="submit" class="btn btn-danger" value="Eliminar ">
+                            </p>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br><br>
+<div style="text-align: center;">
+    <button class="btn btn-warning">Añadir Nuevo Hilo</button>
+</div>
+<br><br>
+<pagination-controls (pageChange)="p = $event" responsive="true" previousLabel="Previous" nextLabel="Next"></pagination-controls>
+
+<br>
+<hr>
+<br>

@@ -58,4 +58,13 @@ export class UsuarioService {
       return this.http.post(`${this.baseUrl}addusuario`, user);
   }
  
+  /** Método para cambiar la imagen de un usuario */
+  changeUrl(id: number, url: string){
+    return this.http.get(`${this.baseUrl}changeUrl/` + id + '/' + url);
+  }
+
+  /** Método para cambiar la contrasela de un usuario*/
+  changePass(id: number, pass: string){
+    return this.http.get(`${this.baseUrl}changePass/` + id + '/' + pass);
+  }
 }

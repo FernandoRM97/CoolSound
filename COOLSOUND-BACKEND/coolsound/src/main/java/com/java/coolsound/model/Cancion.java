@@ -72,9 +72,9 @@ public class Cancion{
 	@JoinColumn(name = "PLAYLIST_ID")
 	private Playlist playlist;
 
-	/** Comentarios de Canciones */
-	@OneToMany(mappedBy = "cancion", cascade = CascadeType.ALL)
-	private Set<ComentarioCancion> ComentarioCanciones = new HashSet<ComentarioCancion>();
+//	/** Comentarios de Canciones */
+//	@OneToMany(mappedBy = "cancion", cascade = CascadeType.ALL)
+//	private Set<ComentarioCancion> ComentarioCanciones = new HashSet<ComentarioCancion>();
 
 	/** Getter de la Id de la Cancion */
 	public int getIdCancion() {
@@ -176,15 +176,15 @@ public class Cancion{
 		this.playlist = playlist;
 	}
 
-	/** Getter de los Comentarios de la Cancion */
-	public Set<ComentarioCancion> getComentarioCanciones() {
-		return ComentarioCanciones;
-	}
-
-	/** Setter de los Comentarios de la Cancion */
-	public void setComentarioCanciones(Set<ComentarioCancion> comentarioCanciones) {
-		ComentarioCanciones = comentarioCanciones;
-	}
+//	/** Getter de los Comentarios de la Cancion */
+//	public Set<ComentarioCancion> getComentarioCanciones() {
+//		return ComentarioCanciones;
+//	}
+//
+//	/** Setter de los Comentarios de la Cancion */
+//	public void setComentarioCanciones(Set<ComentarioCancion> comentarioCanciones) {
+//		ComentarioCanciones = comentarioCanciones;
+//	}
 
 	/** Constructor por defecto de la clase Cancion */
 	public Cancion() {
@@ -204,7 +204,7 @@ public class Cancion{
 		this.usuario = usuario;
 		this.vecesEscuchada = vecesEscuchada;
 		this.playlist = playlist;
-		ComentarioCanciones = comentarioCanciones;
+//		ComentarioCanciones = comentarioCanciones;
 	}
 
 	/** ToString de la clase Cancion */
@@ -212,7 +212,7 @@ public class Cancion{
 	public String toString() {
 		return "Cancion [idCancion=" + idCancion + ", titulo=" + titulo + ", genero=" + genero + ", musica=" + musica
 				+ ", portada=" + portada + ", valoracion=" + valoracion + ", usuario=" + usuario + ", vecesEscuchada="
-				+ vecesEscuchada + ", playlist=" + playlist + ", ComentarioCanciones=" + ComentarioCanciones + "]";
+				+ vecesEscuchada + ", playlist=" + playlist + "]";
 	}
 
 	/** Hash Code la clase Cancion */
@@ -220,7 +220,7 @@ public class Cancion{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((ComentarioCanciones == null) ? 0 : ComentarioCanciones.hashCode());
+//		result = prime * result + ((ComentarioCanciones == null) ? 0 : ComentarioCanciones.hashCode());
 		result = prime * result + ((genero == null) ? 0 : genero.hashCode());
 		result = prime * result + idCancion;
 		result = prime * result + ((musica == null) ? 0 : musica.hashCode());
@@ -246,11 +246,11 @@ public class Cancion{
 		if (getClass() != obj.getClass())
 			return false;
 		Cancion other = (Cancion) obj;
-		if (ComentarioCanciones == null) {
-			if (other.ComentarioCanciones != null)
-				return false;
-		} else if (!ComentarioCanciones.equals(other.ComentarioCanciones))
-			return false;
+//		if (ComentarioCanciones == null) {
+//			if (other.ComentarioCanciones != null)
+//				return false;
+//		} else if (!ComentarioCanciones.equals(other.ComentarioCanciones))
+//			return false;
 		if (genero == null) {
 			if (other.genero != null)
 				return false;

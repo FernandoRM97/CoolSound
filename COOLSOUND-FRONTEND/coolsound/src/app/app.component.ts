@@ -13,6 +13,7 @@ export class AppComponent {
 
   rol: 0;
   nombre: any;
+  url: any;
 
   constructor(private us: UsuarioService) {
     this.rol = 0;
@@ -22,6 +23,7 @@ export class AppComponent {
     let usuario = JSON.parse(sessionStorage.getItem('usuario'));  
     this.rol = usuario.rol;
     this.nombre = usuario.nombre;
+    this.url = usuario.imagen;
   }
 
   logout(){

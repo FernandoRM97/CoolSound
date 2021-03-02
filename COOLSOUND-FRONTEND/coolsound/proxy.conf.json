@@ -1,8 +1,8 @@
 {
-    "/usuarios": {
-      "target": "http://localhost:8080",
-      "secure": true,
-      "logLevel": "debug"
+  "/usuarios": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
   },
   "/addusuario": {
     "target": "http://localhost:8080",
@@ -15,6 +15,21 @@
     "logLevel": "debug"
   },
   "/email": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/usuarios/changeUrl": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/usuarios/changePass": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/hilo":{
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"

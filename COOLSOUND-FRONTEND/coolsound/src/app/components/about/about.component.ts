@@ -36,9 +36,12 @@ export class AboutComponent implements OnInit {
   }
 
   onSaveForm(form) {
-    const nombre = document.getElementById('name').value;
-    const correo = document.getElementById('email').value;
-    const mensaje = document.getElementById('message').value;
+    //const nombre = document.getElementById('name').value;
+    var nombre = (<HTMLInputElement>document.getElementById('name')).value;
+    //const correo = document.getElementById('email').value;
+    var correo = (<HTMLInputElement>document.getElementById('correo')).value;
+    //const mensaje = document.getElementById('message').value;
+    var mensaje = (<HTMLInputElement>document.getElementById('message')).value;
 
     if (this.contactForm.valid) {
       this.router.navigate(['home']);

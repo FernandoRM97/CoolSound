@@ -67,17 +67,17 @@ public class Usuario implements Serializable{
 //	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 //	private Set<Playlist> playlists = new HashSet<Playlist>();
 
-	/** Comentarios de Canciones del Usuario */
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-	private Set<ComentarioCancion> comentarioCanciones = new HashSet<ComentarioCancion>();
-
-	/** Hilos del Usuario */
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-	private Set<Hilo> hilos = new HashSet<Hilo>();
-
-	/** Comentarios del Usuario en el Hilo del Foro */
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-	private Set<Comentario> comentarios = new HashSet<Comentario>();
+//	/** Comentarios de Canciones del Usuario */
+//	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+//	private Set<ComentarioCancion> comentarioCanciones = new HashSet<ComentarioCancion>();
+//
+//	/** Hilos del Usuario */
+//	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+//	private Set<Hilo> hilos = new HashSet<Hilo>();
+//
+//	/** Comentarios del Usuario en el Hilo del Foro */
+//	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+//	private Set<Comentario> comentarios = new HashSet<Comentario>();
 
 	/** Getter del Codigo del Usuario */
 	public int getIdUsuario() {
@@ -159,35 +159,35 @@ public class Usuario implements Serializable{
 //		this.playlists = playlists;
 //	}
 
-	/** Getter de los Comentarios de las Canciones */
-	public Set<ComentarioCancion> getComentarioCanciones() {
-		return comentarioCanciones;
-	}
-
-	/** Setter de los Comentarios de las Canciones */
-	public void setComentarioCanciones(Set<ComentarioCancion> comentarioCanciones) {
-		this.comentarioCanciones = comentarioCanciones;
-	}
-
-	/** Getter de los Hilos */
-	public Set<Hilo> getHilos() {
-		return hilos;
-	}
-
-	/** Setter de los Hilos */
-	public void setHilos(Set<Hilo> hilos) {
-		this.hilos = hilos;
-	}
-
-	/** Getter de los Hilos */
-	public Set<Comentario> getComentarios() {
-		return comentarios;
-	}
-
-	/** Setter de los Hilos */
-	public void setComentarios(Set<Comentario> comentarios) {
-		this.comentarios = comentarios;
-	}
+//	/** Getter de los Comentarios de las Canciones */
+//	public Set<ComentarioCancion> getComentarioCanciones() {
+//		return comentarioCanciones;
+//	}
+//
+//	/** Setter de los Comentarios de las Canciones */
+//	public void setComentarioCanciones(Set<ComentarioCancion> comentarioCanciones) {
+//		this.comentarioCanciones = comentarioCanciones;
+//	}
+//
+//	/** Getter de los Hilos */
+//	public Set<Hilo> getHilos() {
+//		return hilos;
+//	}
+//
+//	/** Setter de los Hilos */
+//	public void setHilos(Set<Hilo> hilos) {
+//		this.hilos = hilos;
+//	}
+//
+//	/** Getter de los Hilos */
+//	public Set<Comentario> getComentarios() {
+//		return comentarios;
+//	}
+//
+//	/** Setter de los Hilos */
+//	public void setComentarios(Set<Comentario> comentarios) {
+//		this.comentarios = comentarios;
+//	}
 
 	/** Constructor de la clase Usuario */
 	public Usuario(int idUsuario, String nombre, String correo, String contraseña, int rol, String imagen,
@@ -202,9 +202,9 @@ public class Usuario implements Serializable{
 		this.imagen = imagen;
 //		this.canciones = canciones;
 //		this.playlists = playlists;
-		this.comentarioCanciones = comentarioCanciones;
-		this.hilos = hilos;
-		this.comentarios = comentarios;
+//		this.comentarioCanciones = comentarioCanciones;
+//		this.hilos = hilos;
+//		this.comentarios = comentarios;
 	}
 
 	public Usuario() {
@@ -215,9 +215,7 @@ public class Usuario implements Serializable{
 	@Override
 	public String toString() {
 		return "Usuario [idUsuario=" + idUsuario + ", nombre=" + nombre + ", correo=" + correo + ", contraseña="
-				+ contraseña + ", rol=" + rol + ", imagen=" + imagen + ", canciones=" + "canciones" + ", playlists="
-				+ "playlists" + ", comentarioCanciones=" + comentarioCanciones + ", hilos=" + hilos + ", comentarios="
-				+ comentarios + "]";
+				+ contraseña + ", rol=" + rol + ", imagen=" + imagen + "]";
 	}
 
 	/** Hash Code de la clase Usuario */
@@ -226,11 +224,11 @@ public class Usuario implements Serializable{
 		final int prime = 31;
 		int result = 1;
 //		result = prime * result + ((canciones == null) ? 0 : canciones.hashCode());
-		result = prime * result + ((comentarioCanciones == null) ? 0 : comentarioCanciones.hashCode());
-		result = prime * result + ((comentarios == null) ? 0 : comentarios.hashCode());
+//		result = prime * result + ((comentarioCanciones == null) ? 0 : comentarioCanciones.hashCode());
+//		result = prime * result + ((comentarios == null) ? 0 : comentarios.hashCode());
 		result = prime * result + ((contraseña == null) ? 0 : contraseña.hashCode());
 		result = prime * result + ((correo == null) ? 0 : correo.hashCode());
-		result = prime * result + ((hilos == null) ? 0 : hilos.hashCode());
+//		result = prime * result + ((hilos == null) ? 0 : hilos.hashCode());
 		result = prime * result + idUsuario;
 		result = prime * result + ((imagen == null) ? 0 : imagen.hashCode());
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
@@ -254,16 +252,16 @@ public class Usuario implements Serializable{
 //				return false;
 //		} else if (!canciones.equals(other.canciones))
 //			return false;
-		if (comentarioCanciones == null) {
-			if (other.comentarioCanciones != null)
-				return false;
-		} else if (!comentarioCanciones.equals(other.comentarioCanciones))
-			return false;
-		if (comentarios == null) {
-			if (other.comentarios != null)
-				return false;
-		} else if (!comentarios.equals(other.comentarios))
-			return false;
+//		if (comentarioCanciones == null) {
+//			if (other.comentarioCanciones != null)
+//				return false;
+//		} else if (!comentarioCanciones.equals(other.comentarioCanciones))
+//			return false;
+//		if (comentarios == null) {
+//			if (other.comentarios != null)
+//				return false;
+//		} else if (!comentarios.equals(other.comentarios))
+//			return false;
 		if (contraseña == null) {
 			if (other.contraseña != null)
 				return false;
@@ -274,11 +272,11 @@ public class Usuario implements Serializable{
 				return false;
 		} else if (!correo.equals(other.correo))
 			return false;
-		if (hilos == null) {
-			if (other.hilos != null)
-				return false;
-		} else if (!hilos.equals(other.hilos))
-			return false;
+//		if (hilos == null) {
+//			if (other.hilos != null)
+//				return false;
+//		} else if (!hilos.equals(other.hilos))
+//			return false;
 		if (idUsuario != other.idUsuario)
 			return false;
 		if (imagen == null) {

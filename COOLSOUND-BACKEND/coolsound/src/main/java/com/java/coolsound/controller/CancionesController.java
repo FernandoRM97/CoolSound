@@ -29,6 +29,13 @@ public class CancionesController {
 		return cs.getAllCanciones();
 	}
 	
+	/**
+	 * 
+	 * Get the songs of a user
+	 * 
+	 * @param idUsuario
+	 * @return
+	 */
 	@GetMapping("/getcanciones/{idUsuario}")
 	public List<Cancion> getAllCanciones(@PathVariable int idUsuario){
 		return cs.getAllCancionesById(idUsuario);

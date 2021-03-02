@@ -8,7 +8,6 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent} from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
 import { CategoriesComponent } from './components/categories/categories.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FormsModule } from '@angular/forms';
 import { UsersComponent } from './components/users/users.component';
@@ -18,6 +17,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MusicaComponent } from './components/musica/musica.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MimusicaComponent } from './components/mimusica/mimusica.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { NuevaImagenComponent } from './components/nueva-imagen/nueva-imagen.component';
+import { CambiarContrasenaComponent } from './components/cambiar-contrasena/cambiar-contrasena.component';
+import { ForoComponent } from './components/foro/foro.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +28,16 @@ import { MimusicaComponent } from './components/mimusica/mimusica.component';
     HomeComponent,
     AboutComponent,
     CategoriesComponent,
-    FooterComponent,
     CarouselComponent,
     UsersComponent,
     RegisterComponent,
     LoginComponent,
     MusicaComponent,
-    MimusicaComponent
+    MimusicaComponent,
+    PerfilComponent,
+    NuevaImagenComponent,
+    CambiarContrasenaComponent,
+    ForoComponent
   ],
   imports: [
     BrowserModule,

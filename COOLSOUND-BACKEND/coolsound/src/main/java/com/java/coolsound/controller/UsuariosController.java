@@ -5,8 +5,9 @@ package com.java.coolsound.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -85,4 +86,30 @@ public class UsuariosController {
 		return us.eliminarUsuario(codusu);
 	}
 	
+	/**
+	 * Cambiar foto perfil usuario
+	 * 
+	 * @param url imagen
+	 * @param id usuario	
+	 */
+	@GetMapping("/changeUrl/{idUsuario}/**")
+	public void changeUrl(HttpServletRequest request, @PathVariable int idUsuario) {
+		String fullUrl = request.getRequestURL().toString();
+	    String url = fullUrl.split("/changeUrl/")[1];
+	    url = url.replace(idUsuario + "/", "");
+//	    System.out.println(url.toString());
+//	    System.out.println(idUsuario);
+		us.changeUrl(idUsuario, url);
+	}
+	
+	/**
+	 * Cambiar contraseña perfil usuario
+	 * 
+	 * @param url imagen
+	 * @param id usuario	
+	 */
+	@GetMapping("/changePass/{idUsuario}/{pass}")
+	public void changePass(@PathVariable int idUsuario, @PathVariable String pass) {
+		us.changePass(idUsuario, pass);
+	}
 }

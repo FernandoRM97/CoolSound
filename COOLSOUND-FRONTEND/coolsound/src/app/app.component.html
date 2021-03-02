@@ -20,7 +20,7 @@
                 <a class="nav-link" routerLink="about" routerLinkActive="active" style="color: white">Mis Playlists</a>
             </li>
             <li *ngIf="rol == 1" class="nav-item">
-                <a class="nav-link" routerLink="about" routerLinkActive="active" style="color: white">Foro</a>
+                <a class="nav-link" routerLink="foro" routerLinkActive="active" style="color: white">Foro</a>
             </li>
             <li *ngIf="rol == 2" class="nav-item">
                 <a class="nav-link" routerLink="musica" routerLinkActive="active" style="color: white">Música</a>
@@ -32,7 +32,7 @@
                 <a class="nav-link" routerLink="about" routerLinkActive="active" style="color: white">Mis Playlists</a>
             </li>
             <li *ngIf="rol == 2" class="nav-item">
-                <a class="nav-link" routerLink="about" routerLinkActive="active" style="color: white">Foro</a>
+                <a class="nav-link" routerLink="foro" routerLinkActive="active" style="color: white">Foro</a>
             </li>
             <li *ngIf="rol == 2" class="nav-item">
                 <a class="nav-link" routerLink="about" routerLinkActive="active" style="color: white">Administración</a>
@@ -42,6 +42,8 @@
             </li>
         </ul>
         
+        <br>
+        <a *ngIf="rol" routerLink="perfil" routerLinkActive="active" style="padding-right: 10px;"><img class="imgRedonda" src="{{ url }}"></a>
         <button *ngIf="!rol" class="button" routerLink="login" routerLinkActive="active"><p style="color: white;"> LOGIN </p></button> <br>
         <button *ngIf="!rol" class="button" routerLink="register" routerLinkActive="active"><p style="color: white;"> REGISTRO </p></button> <br/>
         <button *ngIf="rol" class="button" (click)="logout()"><p style="color: white;"> LOGOUT </p></button> <br/>
@@ -62,7 +64,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <h6>CoolSound</h6>
-                <p class="text-justify">Web de tematica musical donde artistas {{rol}} anonimos pueden darse a conocer y donde conocer a nuevos artistas. Registrate, entra, comparte musica.</p>
+                <p class="text-justify">Web de tematica musical donde artistas anónimos pueden darse a conocer y donde conocer a nuevos artistas. Registrate, entra, comparte musica.</p>
             </div>
 
             <div class="col-xs-6 col-md-3 has-danger">
