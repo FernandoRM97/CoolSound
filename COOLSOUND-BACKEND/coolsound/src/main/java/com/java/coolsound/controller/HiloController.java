@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,9 +35,19 @@ public class HiloController {
 	 * @return borrar hilo
 	 */
 	@GetMapping("/eliminarHilo/{idHilo}")
-	public void eliminarHilo(@PathVariable int idHilo) {
+	public int eliminarHilo(@PathVariable int idHilo) {
+		return hs.eliminarHilo(idHilo);
 	}
 	
+	/**
+	 * Añadir Hilo.
+	 *
+	 * @return añadir hilo
+	 */
+	@GetMapping("/nuevoHilo/{nombreHilo}/{idUsuario}")
+	public int nuevoHilo(@PathVariable String nombreHilo, @PathVariable int idUsuario) {
+		return hs.nuevoHilo(nombreHilo, idUsuario);
+	}
 	
 	
 }

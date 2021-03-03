@@ -1,0 +1,21 @@
+<br>
+<hr>
+<br>
+<div class="container formRegister">
+    <h3 style="text-align: center;">Nuevo Hilo de Discusión</h3>
+    <form [formGroup]="newForm" (ngSubmit)="nuevoHilo()" method="POST">
+        <div class="form-group">
+            <label for="hlo">Introduce el nombre del Hilo</label>
+            <input type="text" class="form-control" formControlName="hlo" id="hlo" placeholder="HILO...">
+            <div class="alert alert-danger" *ngIf="hlo.touched && hlo.invalid" style="margin-top: 5px;">
+                <span *ngIf="hlo.errors.required">El nombre es un campo requerido</span>
+            </div>
+        </div>
+        <button [disabled]="!newForm.valid" type="submit" class="btn btn-success" style="margin-right: 10px;">Cambiar</button>
+        <button type="button" class="btn btn-light" [routerLink]="'home'">Cancelar</button>
+    </form>
+</div>
+<div style="height: 20rem;"></div>
+<br>
+<hr>
+<br>

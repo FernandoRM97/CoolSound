@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.java.coolsound.model.Hilo;
+import com.java.coolsound.model.Usuario;
 import com.java.coolsound.repository.HiloRepository;
+import com.java.coolsound.repository.UserRepository;
 
 @Service
 public class HiloServiceImpl implements HiloService {
@@ -14,6 +16,9 @@ public class HiloServiceImpl implements HiloService {
 	/** The cancionesRepository. */
 	@Autowired
 	private HiloRepository hiloRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
 
 	/**
 	 * Get all Hilos
@@ -26,15 +31,29 @@ public class HiloServiceImpl implements HiloService {
 	}
 	
 	/**
-	 * Eliminar usuario.
+	 * Eliminar Hilo.
 	 *
-	 * @param codusu the codusu
-	 * @return the int
+	 * @param el id del Hilo
 	 */
 	@Override
-	public void eliminarHilo(int idHilo) {
-		System.out.println(idHilo);
+	public int eliminarHilo(int idHilo) {
 		hiloRepository.borrarById(idHilo);
+		return idHilo;
 	}
-
+	
+	/**
+	 * Añadir Hilo
+	 *
+	 * @param nombre del Hilo
+	 * @param el id del Usuario
+	 */
+	@Override
+	public int nuevoHilo(String nombreHilo, int idUsuario) {
+		Hilo hilo = new Hilo();
+		hilo.setNombre(nombreHilo);
+		Usuario user = userRepository.getOne(idUsuario);
+		hilo.setUsuario(user);
+		hiloRepository.save(hilo);
+		return idUsuario;
+	}
 }

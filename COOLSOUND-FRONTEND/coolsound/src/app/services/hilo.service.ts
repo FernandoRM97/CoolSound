@@ -12,8 +12,18 @@ export class HiloService {
 
   constructor(private http: HttpClient) { }
 
-  /** Método para sacar las canciones de BD */
+  /** Método para sacar los Hilos de BD */
   hilos(): Observable<any> {
     return this.http.get<Hilo>(`${this.baseUrl}` + 'getHilos/');
   }
+
+  /** Método para eliminar Hilos de BD */
+  eliminarHilo(idHilo: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}` + 'eliminarHilo/' + idHilo);
+  }
+
+    /** Método para añadir Hilos a BD */
+    nuevoHilo(nombreHilo: string, idUsuario: number): Observable<any> {
+      return this.http.get(`${this.baseUrl}` + 'nuevoHilo/' + nombreHilo + '/' + idUsuario);
+    }
 }

@@ -84,8 +84,17 @@ public class Hilo {
 //		this.comentarios = comentarios;
 //	}
 
-	/** Constructor por defecto de la clase Hilo */
+	/** Constructor por defecto de la clase Hilo 
+	 * @param idUsuario 
+	 * @param nombreHilo */
 	public Hilo() {
+		super();
+	}
+	
+	/** Constructor por defecto de la clase Hilo 
+	 * @param idUsuario 
+	 * @param nombreHilo */
+	public Hilo(String nombreHilo, int idUsuario) {
 		super();
 	}
 

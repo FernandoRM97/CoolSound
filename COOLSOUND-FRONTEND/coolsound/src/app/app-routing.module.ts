@@ -12,6 +12,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { NuevaImagenComponent } from './components/nueva-imagen/nueva-imagen.component';
 import { CambiarContrasenaComponent } from './components/cambiar-contrasena/cambiar-contrasena.component';
 import { ForoComponent } from './components/foro/foro.component';
+import { NuevoHiloComponent } from './components/nuevo-hilo/nuevo-hilo.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -27,7 +28,9 @@ const routes: Routes = [
   { path: 'perfil/nuevaImagen/home', component: HomeComponent},
   { path: 'perfil/cambiarContrasena', component: CambiarContrasenaComponent},
   { path: 'perfil/cambiarContrasena/home', component: HomeComponent},
-  { path: 'foro', component: ForoComponent}
+  { path: 'foro', component: ForoComponent},
+  { path: 'foro/nuevoHilo', component: NuevoHiloComponent},
+  { path: 'foro/nuevoHilo/home', component: HomeComponent}
 ];
 
 @NgModule({

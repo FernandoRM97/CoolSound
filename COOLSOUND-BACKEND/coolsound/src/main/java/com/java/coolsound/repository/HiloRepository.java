@@ -2,11 +2,13 @@ package com.java.coolsound.repository;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.java.coolsound.model.Cancion;
 import com.java.coolsound.model.Hilo;
 
 /**
@@ -27,10 +29,13 @@ public interface HiloRepository extends JpaRepository<Hilo, Integer> {
 
 	/**
 	 * Gets the one hilo.
+	 * @return 
 	 *
 	 * @return one hilo
 	 */
-	@Query(value = "DELETE FROM hilo WHERE hilo_id = ?1", nativeQuery = true)
+    @Modifying
+    @Transactional
+	@Query(value = "DELETE FROM hilo WHERE hilo.hilo_id=?1", nativeQuery = true)
 	void borrarById(int idHilo);
 
 }

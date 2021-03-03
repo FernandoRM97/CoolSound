@@ -2,8 +2,6 @@ package com.java.coolsound.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import com.java.coolsound.model.Hilo;
 
 public interface HiloService {
@@ -20,5 +18,12 @@ public interface HiloService {
 	 *
 	 * @return eliminar hilo
 	 */
-	void eliminarHilo(int idHilo);
+	int eliminarHilo(int idHilo);
+	
+	/**
+	 * Añadir Hilo.
+	 *
+	 * @return añadir hilo
+	 */
+	int nuevoHilo(String nombreHilo, int idUsuario);
 }

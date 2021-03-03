@@ -21,6 +21,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { NuevaImagenComponent } from './components/nueva-imagen/nueva-imagen.component';
 import { CambiarContrasenaComponent } from './components/cambiar-contrasena/cambiar-contrasena.component';
 import { ForoComponent } from './components/foro/foro.component';
+import { NuevoHiloComponent } from './components/nuevo-hilo/nuevo-hilo.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ForoComponent } from './components/foro/foro.component';
     PerfilComponent,
     NuevaImagenComponent,
     CambiarContrasenaComponent,
-    ForoComponent
+    ForoComponent,
+    NuevoHiloComponent
   ],
   imports: [
     BrowserModule,

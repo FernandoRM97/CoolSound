@@ -12,6 +12,7 @@ export class ForoComponent implements OnInit {
   public p: number = 1;
   hilos: Hilo[];
   rol;
+
   constructor(private hs: HiloService) { 
     this.hilos = [];
   }
@@ -25,5 +26,9 @@ export class ForoComponent implements OnInit {
     let usuario = JSON.parse(sessionStorage.getItem('usuario'));  
     this.rol = usuario.rol;
   }
-
+  
+  eliminar(idHilo : number):void {
+    this.hs.eliminarHilo(idHilo).subscribe();
+    location.reload();
+  }
 }
