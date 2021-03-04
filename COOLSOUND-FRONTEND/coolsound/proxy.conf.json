@@ -43,5 +43,15 @@
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
+  },
+  "/comentarios":{
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/comentarios/nuevoComentario":{
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
   }
 }

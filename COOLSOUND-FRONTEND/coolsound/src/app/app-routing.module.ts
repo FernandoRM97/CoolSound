@@ -13,6 +13,7 @@ import { NuevaImagenComponent } from './components/nueva-imagen/nueva-imagen.com
 import { CambiarContrasenaComponent } from './components/cambiar-contrasena/cambiar-contrasena.component';
 import { ForoComponent } from './components/foro/foro.component';
 import { NuevoHiloComponent } from './components/nuevo-hilo/nuevo-hilo.component';
+import { HiloComponent } from './components/hilo/hilo.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: 'perfil/cambiarContrasena/home', component: HomeComponent},
   { path: 'foro', component: ForoComponent},
   { path: 'foro/nuevoHilo', component: NuevoHiloComponent},
-  { path: 'foro/nuevoHilo/home', component: HomeComponent}
+  { path: 'foro/nuevoHilo/home', component: HomeComponent},
+  { path: 'hilo/:idHilo/:nombre', component: HiloComponent},
 ];
 
 @NgModule({

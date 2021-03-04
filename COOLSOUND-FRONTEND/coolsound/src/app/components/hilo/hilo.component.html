@@ -1,0 +1,47 @@
+<br>
+<hr>
+<br>
+<h3 style="text-align: center;">{{nombreComentario}}</h3>
+<br>
+
+<div class="bloque">
+    <table class="table table-striped" width="100%">
+        <thead>
+            <tr>
+                <th scope="col col-m"></th>
+                <th scope="col col-m">Comentario</th>
+                <th scope="col col-m"></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let com of comentarios">
+            <tr *ngIf="com.hilo.idHilo == idHilo">
+                <th scope="row"><img class="imgRedonda" src="{{ com.usuario.imagen }}"></th>
+                <td>{{com.texto}}</td>
+                <td *ngIf="rol == 2">
+                    <input type="button" (click)="eliminar(com.idComentario)" class="btn btn-danger" value="Eliminar">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+<hr>
+<br>
+
+<div class="container newForm">
+    <h5 style="text-align: center;">Nuevo Comentario</h5>
+    <form [formGroup]="newForm" (ngSubmit)="nuevoComentario()" method="POST">
+        <div class="form-group">
+            <label for="texto">Introduce el texto del nuevo comentario</label>
+            <input type="text" class="form-control" formControlName="texto" id="texto" placeholder="Texto...">
+            <div class="alert alert-danger" *ngIf="texto.touched && texto.invalid" style="margin-top: 5px;">
+                <span *ngIf="texto.errors.required">El Texto es un campo requerido</span>
+            </div>
+        </div>
+        <button [disabled]="!newForm.valid" type="submit" class="btn btn-success" style="margin-right: 10px;">Añadir</button>
+    </form>
+</div>
+
+<br>
+<hr>
+<br>

@@ -2,6 +2,7 @@ package com.java.coolsound.service;
 
 import java.util.List;
 
+import com.java.coolsound.model.Comentario;
 import com.java.coolsound.model.Hilo;
 
 public interface HiloService {
@@ -26,4 +27,11 @@ public interface HiloService {
 	 * @return añadir hilo
 	 */
 	int nuevoHilo(String nombreHilo, int idUsuario);
+	
+	/**
+	 * Gets a hilo.
+	 *
+	 * @return the hilo
+	 */
+	List<Comentario> getHilos(int idHilo);
 }

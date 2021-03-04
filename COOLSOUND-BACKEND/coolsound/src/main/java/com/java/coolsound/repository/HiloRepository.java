@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import com.java.coolsound.model.Comentario;
 import com.java.coolsound.model.Hilo;
 
 /**
@@ -37,5 +38,13 @@ public interface HiloRepository extends JpaRepository<Hilo, Integer> {
     @Transactional
 	@Query(value = "DELETE FROM hilo WHERE hilo.hilo_id=?1", nativeQuery = true)
 	void borrarById(int idHilo);
+    
+	/**
+	 * Gets the comentarios of hilos.
+	 *
+	 * @return the all hilos
+	 */
+    @Query(value = "SELECT * FROM comentario WHERE hilo_id=?1", nativeQuery = true)
+    List<Comentario> getHilos(int idHilo);
 
 }

@@ -83,7 +83,12 @@ public class Comentario {
 		this.hilo = hilo;
 	}
 
-	/** Construcotr de la clase Comentario*/
+	/** Constructor por defecto de la clase Comentario */
+	public Comentario() {
+		super();
+	}
+
+	/** Constructor de la clase Comentario*/
 	public Comentario(int idComentario, String texto, Usuario usuario, Hilo hilo) {
 		super();
 		this.idComentario = idComentario;

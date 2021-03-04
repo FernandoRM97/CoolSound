@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.java.coolsound.model.Comentario;
 import com.java.coolsound.model.Hilo;
 import com.java.coolsound.model.Usuario;
 import com.java.coolsound.repository.HiloRepository;
@@ -55,5 +56,9 @@ public class HiloServiceImpl implements HiloService {
 		hilo.setUsuario(user);
 		hiloRepository.save(hilo);
 		return idUsuario;
+	}
+
+	public List<Comentario> getHilos(int idHilo) {
+		return hiloRepository.getHilos(idHilo);
 	}
 }

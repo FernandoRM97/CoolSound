@@ -22,8 +22,8 @@ export class HiloService {
     return this.http.get(`${this.baseUrl}` + 'eliminarHilo/' + idHilo);
   }
 
-    /** Método para añadir Hilos a BD */
-    nuevoHilo(nombreHilo: string, idUsuario: number): Observable<any> {
-      return this.http.get(`${this.baseUrl}` + 'nuevoHilo/' + nombreHilo + '/' + idUsuario);
-    }
+  /** Método para añadir Hilos a BD */
+  nuevoHilo(nombreHilo: string, idUsuario: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}` + 'nuevoHilo/' + nombreHilo + '/' + idUsuario);
+  }
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.java.coolsound.model.Comentario;
 import com.java.coolsound.model.Hilo;
 import com.java.coolsound.service.HiloService;
 
@@ -20,9 +21,9 @@ public class HiloController {
 	HiloService hs;
 	
 	/**
-	 * Gets the all canciones.
+	 * Gets the all Hilos.
 	 *
-	 * @return the all canciones
+	 * @return the all Hilos
 	 */
 	@GetMapping("/getHilos")
 	public List<Hilo> getAllHilos(){
@@ -47,6 +48,16 @@ public class HiloController {
 	@GetMapping("/nuevoHilo/{nombreHilo}/{idUsuario}")
 	public int nuevoHilo(@PathVariable String nombreHilo, @PathVariable int idUsuario) {
 		return hs.nuevoHilo(nombreHilo, idUsuario);
+	}
+	
+	/**
+	 * Gets a Hilo.
+	 *
+	 * @return the Hilo.
+	 */
+	@GetMapping("/hilos/{idHilo}")
+	public List<Comentario> getAllHilos(@PathVariable int idHilo){
+		return hs.getHilos(idHilo);
 	}
 	
 	

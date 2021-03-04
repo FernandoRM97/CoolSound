@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.java.coolsound.model.Cancion;
+import com.java.coolsound.model.Comentario;
 
 /**
  * The Interface CancionRepository.
