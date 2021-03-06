@@ -51,12 +51,12 @@ public class Cancion{
 	private String portada;
 
 	/** Valoracion de la Cancion */
-	@Column(name = "VALORACION", unique = true)
+	@Column(name = "VALORACION")
 	@NotNull
 	private double valoracion;
 
 	/** Veces que se escucha la Cancion */
-	@Column(name = "vecesEscuchada", unique = true)
+	@Column(name = "vecesEscuchada")
 	@NotNull
 	private double vecesEscuchada;
 

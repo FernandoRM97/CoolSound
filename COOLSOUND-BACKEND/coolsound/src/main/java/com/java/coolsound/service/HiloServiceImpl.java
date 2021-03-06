@@ -18,6 +18,7 @@ public class HiloServiceImpl implements HiloService {
 	@Autowired
 	private HiloRepository hiloRepository;
 	
+	/** The UserRepository. */
 	@Autowired
 	private UserRepository userRepository;
 

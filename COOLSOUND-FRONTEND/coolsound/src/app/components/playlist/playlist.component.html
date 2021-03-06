@@ -1,0 +1,54 @@
+<br>
+<hr>
+<br>
+<h3 style="text-align: center;">Playlists</h3>
+<br>
+
+<div class="width200">
+    <table class="table table-striped"  width="100%">
+        <thead>
+            <tr>
+                <th scope="col col-m">#</th>
+                <th scope="col col-m">Nombre</th>
+                <th scope="col col-m"></th>
+                <th scope="col col-m"></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let playlist of playlists | paginate: { itemsPerPage: 10, currentPage: p }">
+            <tr *ngIf="playlist.idUsuario != id">
+                <th scope="row">{{playlist.idPlaylist}}</th>
+                <td>{{playlist.nombre}}</td>
+                <td>
+                    <input type="button" (click)="acceder(playlist.idPlaylist)" class="btn btn-danger" value="Acceder">
+                </td>
+                <td>
+                    <input type="button" (click)="eliminar(playlist.idPlaylist)" class="btn btn-danger" value="Eliminar">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="container newForm bordes">
+    <br>
+    <h5 style="text-align: center;">Nueva Playlist</h5>
+    <form [formGroup]="newForm" (ngSubmit)="nuevaPlaylist()" method="POST">
+        <div class="form-group">
+            <label for="texto">Introduce el nombre de la nueva Playlist</label>
+            <input type="text" class="form-control" formControlName="texto" id="texto" placeholder="Nombre...">
+            <div class="alert alert-danger" *ngIf="texto.touched && texto.invalid" style="margin-top: 5px;">
+                <span *ngIf="texto.errors.required">El Nombre es un campo requerido</span>
+            </div>
+        </div>
+        <button [disabled]="!newForm.valid" type="submit" class="btn btn-success" style="margin-right: 10px;">Añadir</button>
+    </form>
+    <br>
+</div>
+
+<br>
+<hr>
+<br>

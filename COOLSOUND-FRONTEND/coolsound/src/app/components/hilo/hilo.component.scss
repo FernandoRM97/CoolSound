@@ -5,3 +5,10 @@
     border:3px solid rgb(155, 154, 154);
     height: auto;
 }
+
+.bordes {
+    border-radius: 33px 33px 33px 33px;
+    -moz-border-radius: 33px 33px 33px 33px;
+    -webkit-border-radius: 33px 33px 33px 33px;
+    border: 2px solid #000000;
+}

@@ -1,0 +1,40 @@
+<br>
+<hr>
+<br>
+<h3 style="text-align: center;">USUARIOS</h3>
+<br>
+
+<div class="width200">
+    <table class="table table-striped"  width="100%">
+        <thead>
+            <tr>
+                <th scope="col col-m">#</th>
+                <th scope="col col-m">Nombre</th>
+                <th scope="col col-m">Email</th>
+                <th scope="col col-m"></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let user of usuarios | paginate: { itemsPerPage: 10, currentPage: p }">
+            <tr>
+                <th scope="row">{{user.idUsuario}}</th>
+                <td>{{user.nombre}}</td>
+                <td>
+                    {{user.correo}}
+                </td>
+                <td>
+                    <input type="button" (click)="eliminar(user.idUsuario)" class="btn btn-danger" value="Eliminar">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br><br>
+<div class="boton">
+<input type="button" routerLink="administracion" routerLinkActive="active" class="btn btn-warning" value="Atrás">
+</div>
+<br><br>
+<pagination-controls (pageChange)="p = $event" responsive="true" previousLabel="Previous" nextLabel="Next"></pagination-controls>
+
+<br>
+<hr>
+<br>

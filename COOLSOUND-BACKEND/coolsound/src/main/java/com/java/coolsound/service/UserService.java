@@ -34,15 +34,6 @@ public interface UserService {
 	 */
 	void addUsuario(Usuario usuario);
 	
-	
-	/**
-	 * Modificar usuario.
-	 *
-	 * @param user the user
-	 */
-	
-	void modificarUsuario(Usuario user);
-	
 	/**
 	 * Eliminar usuario.
 	 *

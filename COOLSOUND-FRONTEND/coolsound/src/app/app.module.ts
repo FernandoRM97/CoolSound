@@ -23,6 +23,10 @@ import { CambiarContrasenaComponent } from './components/cambiar-contrasena/camb
 import { ForoComponent } from './components/foro/foro.component';
 import { NuevoHiloComponent } from './components/nuevo-hilo/nuevo-hilo.component';
 import { HiloComponent } from './components/hilo/hilo.component';
+import { AdministracionComponent } from './components/administracion/administracion.component';
+import { GestionUsuariosComponent } from './components/gestion-usuarios/gestion-usuarios.component';
+import { GestionCancionesComponent } from './components/gestion-canciones/gestion-canciones.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,11 @@ import { HiloComponent } from './components/hilo/hilo.component';
     CambiarContrasenaComponent,
     ForoComponent,
     NuevoHiloComponent,
-    HiloComponent
+    HiloComponent,
+    AdministracionComponent,
+    GestionUsuariosComponent,
+    GestionCancionesComponent,
+    PlaylistComponent
   ],
   imports: [
     BrowserModule,

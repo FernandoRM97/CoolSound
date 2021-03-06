@@ -26,5 +26,15 @@ public class CancionesServiceImpl implements CancionesService{
 		return cancionRepository.getAllCancionesById(idUsuario);
 	}
 	
+	/**
+	 * Eliminar cancion.
+	 *
+	 * @return the int
+	 */
+	@Override
+	public int eliminarCancion(int idCancion) {
+		cancionRepository.borrarById(idCancion);
+		return idCancion;
+	}
 
 }

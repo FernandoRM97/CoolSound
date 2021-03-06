@@ -8,8 +8,6 @@ import org.springframework.stereotype.Service;
 import com.java.coolsound.model.Usuario;
 import com.java.coolsound.repository.UserRepository;
 
-
-
 /**
  * The Class UserServiceImpl.
  *
@@ -27,7 +25,7 @@ public class UserServiceImpl implements UserService {
 	 * Login.
 	 *
 	 * @param nombre the nombre
-	 * @param clave the clave
+	 * @param clave  the clave
 	 * @return the usuarios
 	 */
 	@Override
@@ -44,7 +42,7 @@ public class UserServiceImpl implements UserService {
 	public List<Usuario> getAllUsuarios() {
 		return userRepository.getAllUsuarios();
 	}
-	
+
 	/**
 	 * Adds the usuario.
 	 *
@@ -59,75 +57,43 @@ public class UserServiceImpl implements UserService {
 	 * Cambiar foto de perfil de Usuario
 	 *
 	 * @param url de la nueva imagen
-	 * @param id del Usuario
+	 * @param id  del Usuario
 	 */
-	public void changeUrl( int idUsuario, String url) {
+	public void changeUrl(int idUsuario, String url) {
 		Usuario usuarioModificado = userRepository.getOne(idUsuario);
 		usuarioModificado.setImagen(url);
-		
-		if(usuarioModificado !=null) {
-			userRepository.save(usuarioModificado);	
+
+		if (usuarioModificado != null) {
+			userRepository.save(usuarioModificado);
 		}
 
 	}
-	
+
 	/**
 	 * Cambiar contraseña de perfil de Usuario
 	 *
 	 * @param pass del Usuario
-	 * @param id del Usuario
+	 * @param id   del Usuario
 	 */
-	public void changePass( int idUsuario, String pass) {
+	public void changePass(int idUsuario, String pass) {
 		Usuario usuarioModificado = userRepository.getOne(idUsuario);
 		usuarioModificado.setContraseña(pass);
-		
-		if(usuarioModificado !=null) {
-			userRepository.save(usuarioModificado);	
+
+		if (usuarioModificado != null) {
+			userRepository.save(usuarioModificado);
 		}
 
 	}
-	
 
-//	/**
-//	 * Modificar usuario.
-//	 *
-//	 * @param user the user
-//	 */
+	/**
+	 * Eliminar usuario.
+	 *
+	 * @return the int
+	 */
 	@Override
-	public void modificarUsuario(Usuario user) {
-//		
-//		Usuario updateUser = userRepository.findOne(user.getIdUsuario());
-//		
-//		if(updateUser != null) {
-//			
-//			updateUser.setNombre(user.getNombre());
-//			updateUser.setCorreo(user.getCorreo());
-//			updateUser.setContraseña(user.getContraseña());
-//			updateUser.setRol(user.getRol());
-//			userRepository.save(updateUser);
-//		}
-//		
+	public int eliminarUsuario(int idUsuario) {
+		userRepository.borrarById(idUsuario);
+		return idUsuario;
 	}
 
-//	/**
-//	 * Eliminar usuario.
-//	 *
-//	 * @param codusu the codusu
-//	 * @return the int
-//	 * //
-	@Override
-	public int eliminarUsuario(int codusu) {
-//		Usuario deleteUser = userRepository.findOne(codusu);
-//		
-//		if(deleteUser != null) {
-//			try {
-//				userRepository.delete(deleteUser);
-//				return 1;
-//			} catch (Exception e) {
-//				return 0;
-//			}
-//		}
-		return 0;
-	}
-	
 }

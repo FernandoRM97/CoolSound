@@ -22,5 +22,9 @@ export class CancionService {
     return this.http.get<Cancion>(`${this.baseUrl}` + 'getcanciones/' + id);
   }
 
+  /** Método para eliminar Usuarios de BD */
+  eliminarCancion(idCancion: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}` + 'eliminarcancion/' + idCancion);
+  }
 }
 

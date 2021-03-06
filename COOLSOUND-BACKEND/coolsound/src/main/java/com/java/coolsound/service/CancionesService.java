@@ -20,4 +20,10 @@ public interface CancionesService {
 	 */
 	List<Cancion> getAllCancionesById(int idUsuario);
 	
+	/**
+	 * Eliminar cancion.
+	 *
+	 * @return the int
+	 */
+	int eliminarCancion(int idCancion);
 }

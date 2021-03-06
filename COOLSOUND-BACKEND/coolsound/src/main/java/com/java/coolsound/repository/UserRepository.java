@@ -7,7 +7,10 @@ package com.java.coolsound.repository;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -42,11 +45,13 @@ public interface UserRepository extends JpaRepository<Usuario, Integer>{
 	List<Usuario> getAllUsuarios();
 	
 	/**
-	 * Cambiar foto de perfil del Usuario
-	 * 
-	 * @param url de la nueva imagen
-	 * @param idUsuario
+	 * Borrar Usuario
+	 *
+	 * @return idUsuario
 	 */
-	//@Query(value= "", nativeQuery = true)
+    @Modifying
+    @Transactional
+	@Query(value = "DELETE FROM usuarios WHERE id_usuario=?1", nativeQuery = true)
+	void borrarById(int idUsuario);
 	
 }

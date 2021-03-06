@@ -67,4 +67,14 @@ export class UsuarioService {
   changePass(id: number, pass: string){
     return this.http.get(`${this.baseUrl}changePass/` + id + '/' + pass);
   }
+
+  /** Método para sacar todos los usuarios de BD */
+  getAllUsuarios() : Observable<any>{
+    return this.http.get(`${this.baseUrl}` + 'getusuarios');
+  }
+
+    /** Método para eliminar Usuarios de BD */
+    eliminarUsuario(idUsuario: number): Observable<any> {
+      return this.http.get(`${this.baseUrl}` + 'eliminarUsuario/' + idUsuario);
+    }
 }

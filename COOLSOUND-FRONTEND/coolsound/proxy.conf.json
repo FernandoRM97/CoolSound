@@ -53,5 +53,36 @@
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
+  },
+  "/usuarios/getusuarios": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/usuarios/eliminarUsuario": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/canciones/eliminarcancion": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/playlist/getPlaylists": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/playlist/nuevaPlaylist": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  }
+  ,
+  "/playlist/eliminarPlaylist": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
   }
 }

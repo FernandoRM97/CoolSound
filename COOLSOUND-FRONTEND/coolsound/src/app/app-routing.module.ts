@@ -14,6 +14,10 @@ import { CambiarContrasenaComponent } from './components/cambiar-contrasena/camb
 import { ForoComponent } from './components/foro/foro.component';
 import { NuevoHiloComponent } from './components/nuevo-hilo/nuevo-hilo.component';
 import { HiloComponent } from './components/hilo/hilo.component';
+import { AdministracionComponent } from './components/administracion/administracion.component';
+import { GestionUsuariosComponent } from './components/gestion-usuarios/gestion-usuarios.component';
+import { GestionCancionesComponent } from './components/gestion-canciones/gestion-canciones.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -33,6 +37,19 @@ const routes: Routes = [
   { path: 'foro/nuevoHilo', component: NuevoHiloComponent},
   { path: 'foro/nuevoHilo/home', component: HomeComponent},
   { path: 'hilo/:idHilo/:nombre', component: HiloComponent},
+  { path: 'administracion', component: AdministracionComponent},
+  { path: 'about/register', component: RegisterComponent},
+  { path: 'administracion/gestionUsuarios', component: GestionUsuariosComponent},
+  { path: 'administracion/gestionCanciones', component: GestionCancionesComponent},
+  { path: 'gestionUsuarios', component: GestionUsuariosComponent},
+  { path: 'gestionUsuarios/administracion', component: AdministracionComponent},
+  { path: 'gestionUsuarios/administracion/gestionUsuarios', component: GestionUsuariosComponent},
+  { path: 'administracion/gestionUsuarios/administracion', component: AdministracionComponent},
+  { path: 'administracion/gestionCanciones/administracion', component: AdministracionComponent},
+  { path: 'gestionCanciones', component: GestionCancionesComponent},
+  { path: 'administracion/gestionCanciones/administracion/gestionUsuarios', component: GestionUsuariosComponent},
+  { path: 'administracion/gestionUsuarios/administracion/gestionCanciones', component: GestionCancionesComponent},
+  { path: 'playlist', component: PlaylistComponent},
 ];
 
 @NgModule({

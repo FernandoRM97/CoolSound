@@ -1,0 +1,36 @@
+<br>
+<hr>
+<br>
+<h3 style="text-align: center;">CANCIONES</h3>
+<br>
+
+<div class="width200">
+    <table class="table table-striped"  width="100%">
+        <thead>
+            <tr>
+                <th scope="col col-m">#</th>
+                <th scope="col col-m">Título</th>
+                <th scope="col col-m"></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let cancion of canciones | paginate: { itemsPerPage: 10, currentPage: p }">
+            <tr>
+                <th scope="row">{{cancion.idCancion}}</th>
+                <td>{{cancion.titulo}}</td>
+                <td>
+                    <input type="button" (click)="eliminar(cancion.idCancion)" class="btn btn-danger" value="Eliminar">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br><br>
+<div class="boton">
+<input type="button" routerLink="administracion" routerLinkActive="active" class="btn btn-warning" value="Atrás">
+</div>
+<br><br>
+<pagination-controls (pageChange)="p = $event" responsive="true" previousLabel="Previous" nextLabel="Next"></pagination-controls>
+
+<br>
+<hr>
+<br>
