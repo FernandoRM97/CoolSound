@@ -15,7 +15,6 @@ export class HiloComponent implements OnInit {
     texto: new FormControl('', [Validators.required]),
   });
 
-
   comentarios: Comentario[];
   id;
   rol;

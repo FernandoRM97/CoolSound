@@ -78,9 +78,13 @@
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
-  }
-  ,
+  },
   "/playlist/eliminarPlaylist": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/canciones/nuevaCancion": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"

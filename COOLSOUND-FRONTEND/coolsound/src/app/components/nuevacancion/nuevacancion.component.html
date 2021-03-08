@@ -1,0 +1,47 @@
+<br>
+<hr>
+<br>
+<div class="bordes container formRegister">
+    <br>
+    <h3 style="text-align: center;">Añadir Nueva Canción</h3>
+    <form [formGroup]="registerForm" (ngSubmit)="addNewCancion(registerForm)" method="POST">
+        <div class="form-group">
+            <label for="titulo">Título:</label>
+            <input type="text" class="form-control" formControlName="titulo" id="titulo" placeholder="Título...">
+            <div class="alert alert-danger" *ngIf="(titulo.touched) && (titulo.invalid)" style="margin-top: 5px;">
+                <span *ngIf="titulo.errors.required">El titulo es un campo requerido</span>
+                <span *ngIf="titulo.errors.minlength">
+                    Longitud mínima del titulo: {{nombre.errors.minlength.requiredLength}}
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="genero">Género</label>
+            <br>
+            <select name="genero" id="genero" class="sidebar-box">
+                <option value="POP">POP</option>
+                <option value="HIP HOP">HIP HOP</option>
+                <option value="RAP">RAP</option>
+                <option value="ELECTRÓNICA">ELECTRÓNICA</option>
+                <option value="HOUSE">HOUSE</option>
+                <option value="ROCK">ROCK</option>
+                <option value="INDIE">INDIE</option>
+                <option value="REGGAETON">REGGAETON</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cancion">Canción</label>
+            <input type="text" class="form-control" formControlName="cancion" id="cancion" placeholder="Canción...">
+            <div class="alert alert-danger" *ngIf="(cancion.touched) && (cancion.invalid)" style="margin-top: 5px;">
+                <span *ngIf="cancion.errors.required">La cancion es requerida</span>
+            </div>
+        </div>
+        <br>
+        <button [disabled]="registerForm.valid" type="submit" class="btn btn-success">Añadir</button>
+        <button type="button" class="btn btn-light" [routerLink]="['mimusica']">Cancelar</button>
+        <br><br>
+    </form>
+</div>
+<br>
+<hr>
+<br>

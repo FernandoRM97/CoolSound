@@ -6,7 +6,7 @@
 <br>
 
 <div class="bloque">
-    <div class="card" *ngFor="let cancion of canciones | paginate: { itemsPerPage: 16, currentPage: p }">
+    <div class="card" *ngFor="let cancion of canciones | paginate: { itemsPerPage: 8, currentPage: p }">
         <img class="card-img-top" src="{{ cancion?.portada }}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">aa {{cancion?.titulo}}</h5>

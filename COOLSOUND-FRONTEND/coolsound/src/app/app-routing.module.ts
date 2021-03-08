@@ -18,6 +18,8 @@ import { AdministracionComponent } from './components/administracion/administrac
 import { GestionUsuariosComponent } from './components/gestion-usuarios/gestion-usuarios.component';
 import { GestionCancionesComponent } from './components/gestion-canciones/gestion-canciones.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
+import { NuevacancionComponent } from './components/nuevacancion/nuevacancion.component';
+import { PlaylistDetallesComponent } from './components/playlist-detalles/playlist-detalles.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -50,6 +52,9 @@ const routes: Routes = [
   { path: 'administracion/gestionCanciones/administracion/gestionUsuarios', component: GestionUsuariosComponent},
   { path: 'administracion/gestionUsuarios/administracion/gestionCanciones', component: GestionCancionesComponent},
   { path: 'playlist', component: PlaylistComponent},
+  { path: 'mimusica/nuevaCancion', component: NuevacancionComponent},
+  { path: 'mimusica/nuevaCancion/mimusica', component: MimusicaComponent},
+  { path: 'playlist/:idPlaylist', component: PlaylistDetallesComponent},
 ];
 
 @NgModule({

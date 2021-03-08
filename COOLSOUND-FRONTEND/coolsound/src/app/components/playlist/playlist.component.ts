@@ -23,7 +23,7 @@ export class PlaylistComponent implements OnInit {
   constructor(private ps: PlaylistService, private router: Router) { }
 
   ngOnInit() {
-    let usuario = JSON.parse(sessionStorage.getItem('usuario'));  
+    let usuario = JSON.parse(sessionStorage.getItem('usuario'));
     this.id = usuario.idUsuario;
 
     this.ps.playlist().subscribe(data => {

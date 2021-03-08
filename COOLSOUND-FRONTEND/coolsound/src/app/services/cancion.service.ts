@@ -22,9 +22,21 @@ export class CancionService {
     return this.http.get<Cancion>(`${this.baseUrl}` + 'getcanciones/' + id);
   }
 
+    /** Método para sacar las canciones de BD */
+    cancionesPlaylist(idPlaylist: any): Observable<any> {
+      return this.http.get<Cancion>(`${this.baseUrl}` + 'getCanciones/' + idPlaylist);
+    }
+
   /** Método para eliminar Usuarios de BD */
   eliminarCancion(idCancion: number): Observable<any> {
     return this.http.get(`${this.baseUrl}` + 'eliminarcancion/' + idCancion);
   }
+
+  /** Método para añadir Canciones a BD */
+  nuevaCancion(titulo:string, valoracion:number, vecesEscuchada:number, genero:string, idUsu: number, cancion:string): Observable<any> {
+    return this.http.get(`${this.baseUrl}nuevaCancion/` + titulo  + '/' + valoracion + '/' + vecesEscuchada + '/' + idUsu
+    + '/' + genero + '/' + cancion);
+  }
+
 }
 

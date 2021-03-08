@@ -15,11 +15,11 @@
             </tr>
         </thead>
         <tbody *ngFor="let playlist of playlists | paginate: { itemsPerPage: 10, currentPage: p }">
-            <tr *ngIf="playlist.idUsuario != id">
+            <tr *ngIf="playlist.usuario.idUsuario == id">
                 <th scope="row">{{playlist.idPlaylist}}</th>
                 <td>{{playlist.nombre}}</td>
                 <td>
-                    <input type="button" (click)="acceder(playlist.idPlaylist)" class="btn btn-danger" value="Acceder">
+                    <input type="button" [routerLink]="['/playlist', playlist.idPlaylist]" class="btn btn-danger" value="Acceder">
                 </td>
                 <td>
                     <input type="button" (click)="eliminar(playlist.idPlaylist)" class="btn btn-danger" value="Eliminar">

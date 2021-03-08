@@ -46,19 +46,18 @@ public class Cancion{
 	private String musica;
 
 	/** Portada de la Cancion */
-	@Column(name = "PORTADA", unique = true)
-	@NotNull
+	@Column(name = "PORTADA")
 	private String portada;
 
 	/** Valoracion de la Cancion */
 	@Column(name = "VALORACION")
 	@NotNull
-	private double valoracion;
+	private int valoracion;
 
 	/** Veces que se escucha la Cancion */
 	@Column(name = "vecesEscuchada")
 	@NotNull
-	private double vecesEscuchada;
+	private int vecesEscuchada;
 
 	/** Usuario */
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -124,23 +123,13 @@ public class Cancion{
 		this.portada = portada;
 	}
 
-	/** Getter del Id del Usuario */
-	public Usuario getIdUsuario() {
-		return usuario;
-	}
-
-	/** Setter del Id del Usuario */
-	public void setIdUsuario(Usuario idUsuario) {
-		this.usuario = idUsuario;
-	}
-
 	/** Getter de la Valoracion */
 	public double getValoracion() {
 		return valoracion;
 	}
 
 	/** Setter de la Valoracion */
-	public void setValoracion(double valoracion) {
+	public void setValoracion(int valoracion) {
 		this.valoracion = valoracion;
 	}
 
@@ -150,7 +139,7 @@ public class Cancion{
 	}
 
 	/** Setter del VecesEscuchada */
-	public void setVecesEscuchada(double vecesEscuchada) {
+	public void setVecesEscuchada(int vecesEscuchada) {
 		this.vecesEscuchada = vecesEscuchada;
 	}
 
@@ -190,8 +179,8 @@ public class Cancion{
 	}
 
 	/** Constructor de la clase Cancion */
-	public Cancion(int idCancion, String titulo, String genero, String musica, String portada, double valoracion,
-			Usuario usuario, double vecesEscuchada, Playlist playlist, Set<ComentarioCancion> comentarioCanciones) {
+	public Cancion(int idCancion, String titulo, String genero, String musica, String portada, int valoracion,
+			Usuario usuario, int vecesEscuchada, Playlist playlist, Set<ComentarioCancion> comentarioCanciones) {
 		super();
 		this.idCancion = idCancion;
 		this.titulo = titulo;

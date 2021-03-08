@@ -44,7 +44,7 @@ public class PlaylistController {
 	 *
 	 * @return borrar Playlist
 	 */
-	@GetMapping("/eliminarPlaylist/{idPlaylist}")
+	@GetMapping("/eliminarPlaylist	/{idPlaylist}")
 	public int eliminarHilo(@PathVariable int idPlaylist) {
 		return ps.eliminarPlaylist(idPlaylist);
 	}

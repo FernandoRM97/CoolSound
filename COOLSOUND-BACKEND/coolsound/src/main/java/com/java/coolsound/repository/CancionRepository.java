@@ -36,6 +36,14 @@ public interface CancionRepository extends JpaRepository<Cancion, Integer>{
 	List<Cancion> getAllCancionesById(int idUsuario);
 	
 	/**
+	 * Gets the all canciones by idPlaylist.
+	 *
+	 * @return the all canciones
+	 */
+	@Query(value = "SELECT * FROM canciones WHERE playlist_id= ?1", nativeQuery = true)
+	List<Cancion> getAllCancionesByIdPlaylist(int idPlaylist);
+	
+	/**
 	 * Borrar Cancion
 	 *
 	 * @return idCancion
