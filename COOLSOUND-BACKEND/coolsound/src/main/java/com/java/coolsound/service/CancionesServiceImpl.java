@@ -32,6 +32,11 @@ public class CancionesServiceImpl implements CancionesService {
 	}
 	
 	@Override
+	public List<Cancion> getCancion(int idCancion) {
+		return cancionRepository.getCancion(idCancion);
+	}
+	
+	@Override
 	public List<Cancion> getAllCancionesByIdPlaylist(int idPlaylist) {
 		return cancionRepository.getAllCancionesByIdPlaylist(idPlaylist);
 	}
@@ -54,7 +59,7 @@ public class CancionesServiceImpl implements CancionesService {
 	 */
 	@Override
 	public void addCancion(String titulo , int valoracion, int vecesEscuchada, int idUsu,
-			String genero, String cancion) {
+		String genero, String cancion) {
 		Cancion canc = new Cancion();
 		Usuario user = userRepository.getOne(idUsu);
 		
@@ -69,6 +74,22 @@ public class CancionesServiceImpl implements CancionesService {
 		
 		cancionRepository.save(canc);
 		
+	}
+	
+	/**
+	 * Cambiar foto de perfil de Usuario
+	 *
+	 * @param url de la nueva imagen
+	 * @param id  del Usuario
+	 */
+	public void changeUrl(int idCancion, String url) {
+		Cancion cancionModificada = cancionRepository.getOne(idCancion);
+		cancionModificada.setPortada(url);
+
+		if (cancionModificada != null) {
+			cancionRepository.save(cancionModificada);
+		}
+
 	}
 
 }

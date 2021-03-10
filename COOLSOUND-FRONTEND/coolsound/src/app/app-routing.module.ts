@@ -20,6 +20,7 @@ import { GestionCancionesComponent } from './components/gestion-canciones/gestio
 import { PlaylistComponent } from './components/playlist/playlist.component';
 import { NuevacancionComponent } from './components/nuevacancion/nuevacancion.component';
 import { PlaylistDetallesComponent } from './components/playlist-detalles/playlist-detalles.component';
+import { MusicadetalleComponent } from './components/musicadetalle/musicadetalle.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -55,6 +56,7 @@ const routes: Routes = [
   { path: 'mimusica/nuevaCancion', component: NuevacancionComponent},
   { path: 'mimusica/nuevaCancion/mimusica', component: MimusicaComponent},
   { path: 'playlist/:idPlaylist', component: PlaylistDetallesComponent},
+  { path: 'musicadetalle/:idCancion', component: MusicadetalleComponent}
 ];
 
 @NgModule({

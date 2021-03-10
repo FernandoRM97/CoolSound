@@ -7,10 +7,10 @@
 
 <div class="bloque">
     <div class="card" *ngFor="let cancion of canciones | paginate: { itemsPerPage: 8, currentPage: p }">
-        <img class="card-img-top" src="{{ cancion?.portada }}" alt="Card image cap">
+        <img class="card-img-top img" src="{{ cancion?.portada }}" alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title">aa {{cancion?.titulo}}</h5>
-            <button class="btn btn-danger">Más Información</button>
+            <h5 class="card-title">{{cancion?.titulo}}</h5>
+            <button class="btn btn-danger" [routerLink]="['/musicadetalle', cancion.idCancion]">Más Información</button>
             <!-- [routerLink]="['/', 'phone', phone.id+'I']" -->
         </div>
     </div>

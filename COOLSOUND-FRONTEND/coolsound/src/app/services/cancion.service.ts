@@ -23,9 +23,14 @@ export class CancionService {
   }
 
     /** Método para sacar las canciones de BD */
-    cancionesPlaylist(idPlaylist: any): Observable<any> {
-      return this.http.get<Cancion>(`${this.baseUrl}` + 'getCanciones/' + idPlaylist);
+    unaCancion(id: any): Observable<any> {
+      return this.http.get<Cancion>(`${this.baseUrl}` + 'getcancion/' + id);
     }
+
+  /** Método para sacar las canciones de BD */
+  cancionesPlaylist(idPlaylist: any): Observable<any> {
+     return this.http.get<Cancion>(`${this.baseUrl}` + 'getCanciones/' + idPlaylist);
+  }
 
   /** Método para eliminar Usuarios de BD */
   eliminarCancion(idCancion: number): Observable<any> {
@@ -37,6 +42,11 @@ export class CancionService {
     return this.http.get(`${this.baseUrl}nuevaCancion/` + titulo  + '/' + valoracion + '/' + vecesEscuchada + '/' + idUsu
     + '/' + genero + '/' + cancion);
   }
+
+  /** Método para cambiar la imagen de una cancion */
+  cambiarFoto(idCancion: number, url: string){
+    return this.http.get(`${this.baseUrl}cambiarFoto/` + idCancion + '/' + url);
+  }  
 
 }
 

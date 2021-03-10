@@ -92,6 +92,12 @@ public class ComentarioCancion {
 		this.cancion = cancion;
 	}
 
+	
+	/** Constructor por defecto de la clase ComentarioCancion */
+	public ComentarioCancion() {
+		super();
+	}
+
 	/** ToString de la clase ComentarioCancion */
 	@Override
 	public String toString() {

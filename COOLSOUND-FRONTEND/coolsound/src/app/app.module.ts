@@ -29,6 +29,7 @@ import { GestionCancionesComponent } from './components/gestion-canciones/gestio
 import { PlaylistComponent } from './components/playlist/playlist.component';
 import { NuevacancionComponent } from './components/nuevacancion/nuevacancion.component';
 import { PlaylistDetallesComponent } from './components/playlist-detalles/playlist-detalles.component';
+import { MusicadetalleComponent } from './components/musicadetalle/musicadetalle.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { PlaylistDetallesComponent } from './components/playlist-detalles/playli
     GestionCancionesComponent,
     PlaylistComponent,
     NuevacancionComponent,
-    PlaylistDetallesComponent
+    PlaylistDetallesComponent,
+    MusicadetalleComponent
   ],
   imports: [
     BrowserModule,

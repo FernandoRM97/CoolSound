@@ -1,0 +1,99 @@
+<br/>
+<hr/>
+<br/>
+
+<div class="col-wrapper" *ngFor="let cancion of canciones">
+    <div class="col div">
+        <img class="imgRedonda" src="{{ cancion.portada }}"> <br><br>
+        <iframe class="slide" [src]="sanitizer.bypassSecurityTrustResourceUrl(cancion.musica)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <br> <br>
+    <div class="col bordes">
+        <br>
+        <p><b>Titulo: </b>{{ cancion.titulo }}</p><hr>
+        <p><b>Género: </b>{{ cancion.genero }}</p><hr>
+        <p><b>Valoración: </b>{{ cancion.valoracion }}</p><hr>
+
+        <label for="valorar"><b>Valorar :</b></label> 
+        <select name="valorar" id="valorar" class="sidebar-box">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <div class="div">
+            <button class="button div" routerLink="cambiarContrasena" routerLinkActive="active"><p style="color: white;"> Valorar </p></button> <br>
+        </div><hr>
+
+        <label for="anadir"><b>Añadir a Playlist :</b></label>
+        <div *ngFor="let play of playlist">
+            <select name="anadir" id="anadir" class="sidebar-box">
+                <option value="play.idPlaylist">{{play.idPlaylist}}</option>
+            </select>
+        </div> 
+        <div class="div">
+            <button class="button div" routerLink="cambiarContrasena" routerLinkActive="active"><p style="color: white;"> Añadir </p></button> <br>
+        </div><hr>
+
+        <form [formGroup]="newForm" (ngSubmit)="nuevaFoto(newForm)" method="POST">
+            <div class="form-group">
+                <label for="url"><b>Cambiar portada :</b></label>
+                <input type="text" class="form-control" formControlName="url" id="url" placeholder="URL...">
+                <div class="alert alert-danger" *ngIf="url.touched && url.invalid" style="margin-top: 5px;">
+                    <span *ngIf="url.errors.required">La URL es un campo requerido</span>
+                </div>
+            </div>
+            <div class="div">
+                <button type="submit" class="button div">Cambiar</button>
+            </div>
+        </form>
+    </div>
+</div>
+<br><br>
+<div class="bloque">
+    <table class="table table-striped" width="100%">
+        <thead>
+            <tr>
+                <th scope="col col-m"></th>
+                <th scope="col col-m">Comentario</th>
+                <th scope="col col-m"></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let com of comentarios">
+            <tr>
+                <th scope="row"><img class="imgRedonda2" src="{{ com.usuario.imagen }}"></th>
+                <td>{{com.nombre}}</td>
+                <td *ngIf="rol == 2">
+                    <input type="button" (click)="eliminar(com.idComentarioCancion)" class="btn btn-danger" value="Eliminar">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container newForm bordes">
+    <br>
+    <h5 style="text-align: center;">Nuevo Comentario</h5>
+    <form [formGroup]="newForm" (ngSubmit)="nuevoComentario()" method="POST">
+        <div class="form-group">
+            <label for="texto">Introduce el texto del nuevo comentario</label>
+            <input type="text" class="form-control" formControlName="texto" id="texto" placeholder="Texto...">
+            <div class="alert alert-danger" *ngIf="texto.touched && texto.invalid" style="margin-top: 5px;">
+                <span *ngIf="texto.errors.required">El Texto es un campo requerido</span>
+            </div>
+        </div>
+        <button [disabled]="!newForm.valid" type="submit" class="btn btn-success" style="margin-right: 10px;">Añadir</button>
+    </form>
+    <br>
+</div> 
+
+
+<br/>
+<hr/>
+<br/>

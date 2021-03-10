@@ -19,7 +19,7 @@ export class PlaylistDetallesComponent implements OnInit {
     config.interval = 0;
     config.wrap = true;
     config.keyboard = false;
-    config.pauseOnHover = true;
+    config.pauseOnHover = false;
   }
   ngOnInit() {
     let idPlaylist = this._route.snapshot.paramMap.get('idPlaylist');

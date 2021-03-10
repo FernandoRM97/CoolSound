@@ -43,7 +43,7 @@ export class HiloComponent implements OnInit {
 
   eliminar(idComentario : number):void {
     this.cs.eliminarComentario(idComentario).subscribe();
-    this.router.navigate(['foro']);
+    location.reload();
   }
 
   nuevoComentario(){
@@ -51,7 +51,7 @@ export class HiloComponent implements OnInit {
     let user = this.id;
     let hilo = this.idHilo;
     this.cs.nuevoHilo(hilo,text,user).subscribe();
-    this.router.navigate(['foro']);
+    location.reload();
   }
 
   get texto() {

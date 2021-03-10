@@ -28,6 +28,13 @@ public interface CancionesService {
 	List<Cancion> getAllCancionesByIdPlaylist(int idPlaylist);
 	
 	/**
+	 * Gets the cancion
+	 *
+	 * @return the cancion
+	 */
+	List<Cancion> getCancion(int idCancion);
+	
+	/**
 	 * Eliminar cancion.
 	 *
 	 * @return the int
@@ -41,4 +48,12 @@ public interface CancionesService {
 	 */
 	void addCancion(String titulo, int valoracion, int vecesEscuchada, int idUsu ,
 			String genero, String cancion);
+	
+	/**
+	 * Cambiar foto de la portada
+	 * 
+	 * @param url nueva imagen
+	 * @param id de la cancion	
+	 */
+	void changeUrl(int idCancion, String url);
 }

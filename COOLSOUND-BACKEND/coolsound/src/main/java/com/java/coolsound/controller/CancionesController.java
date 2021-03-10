@@ -1,6 +1,5 @@
 package com.java.coolsound.controller;
 
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -42,6 +41,18 @@ public class CancionesController {
 	@GetMapping("/getcanciones/{idUsuario}")
 	public List<Cancion> getAllCanciones(@PathVariable int idUsuario) {
 		return cs.getAllCancionesById(idUsuario);
+	}
+	
+	/**
+	 * 
+	 * Get the songs
+	 * 
+	 * @param idCancion
+	 * @return
+	 */
+	@GetMapping("/getcancion/{idCancion}")
+	public List<Cancion> getCancion(@PathVariable int idCancion) {
+		return cs.getCancion(idCancion);
 	}
 
 	/**
@@ -99,6 +110,22 @@ public class CancionesController {
 		String url4 = "https://www.youtube-nocookie.com/embed/" + url3 + "?controls=0";
 
 		cs.addCancion(titulo, valoracion, vecesEscuchada, idUsu, genero, url4);
+	}
+	
+	/**
+	 * Cambiar foto perfil usuario
+	 * 
+	 * @param url imagen
+	 * @param id  usuario
+	 */
+	@GetMapping("/cambiarFoto/{idCancion}/**")
+	public void changeUrl(HttpServletRequest request, @PathVariable int idCancion) {
+		String fullUrl = request.getRequestURL().toString();
+		String url = fullUrl.split("/cambiarFoto/")[1];
+		url = url.replace(idCancion + "/", "");
+//	    System.out.println(url.toString());
+//	    System.out.println(idUsuario);
+		cs.changeUrl(idCancion, url);
 	}
 
 }

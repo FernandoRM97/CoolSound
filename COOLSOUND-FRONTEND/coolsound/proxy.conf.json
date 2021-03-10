@@ -88,5 +88,30 @@
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
+  },
+  "/canciones/getCanciones": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/comentarioCancion/getComentarioCancion": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/comentarioCancion/eliminarComentarioCancion": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/comentarioCancion/nuevoComentarioCancion": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/comentarioCancion/cambiarFoto": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
   }
 }

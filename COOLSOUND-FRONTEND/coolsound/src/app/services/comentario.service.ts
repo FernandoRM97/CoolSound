@@ -23,8 +23,8 @@ export class ComentarioService {
     return this.http.get(`${this.baseUrl}` + 'eliminarComentario/' + idComentario);
   }
 
-    /** Método para añadir Comentarios a BD */
-    nuevoHilo(idHilo: number, texto: string, idUsuario: number): Observable<any> {
-      return this.http.get(`${this.baseUrl}` + 'nuevoComentario/' + idHilo + '/' + texto + '/' + idUsuario);
-    }
+  /** Método para añadir Comentarios a BD */
+  nuevoHilo(idHilo: number, texto: string, idUsuario: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}` + 'nuevoComentario/' + idHilo + '/' + texto + '/' + idUsuario);
+  }
 }
