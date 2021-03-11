@@ -113,5 +113,30 @@
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
+  },
+  "/canciones/changeValoracion": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/canciones/changePlaylist": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/canciones/vecesEscuchada": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/canciones/masEscuchadas": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/canciones/mejorValoradas": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "logLevel": "debug"
   }
 }

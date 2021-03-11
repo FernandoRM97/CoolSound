@@ -2,7 +2,7 @@
 <hr>
 <br>
 
-<h3 class="titulo">Canciones</h3>
+<h3 class="titulo">Videoclips</h3>
 <br>
 
 <div class="bloque">
@@ -10,7 +10,7 @@
         <img class="card-img-top img" src="{{ cancion?.portada }}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{cancion?.titulo}}</h5>
-            <button class="btn btn-danger" [routerLink]="['/musicadetalle', cancion.idCancion]">Más Información</button>
+            <button class="btn btn-danger" [routerLink]="['/musicadetalle', cancion.idCancion, cancion.valoracion, cancion.vecesValorada ]">Más Información</button>
             <!-- [routerLink]="['/', 'phone', phone.id+'I']" -->
         </div>
     </div>

@@ -53,11 +53,18 @@ public class Cancion{
 	@Column(name = "VALORACION")
 	@NotNull
 	private int valoracion;
+	
+	/** Veces que se escucha la Cancion */
+	@Column(name = "vecesValorada")
+	@NotNull
+	private int vecesValorada;
 
 	/** Veces que se escucha la Cancion */
 	@Column(name = "vecesEscuchada")
 	@NotNull
 	private int vecesEscuchada;
+	
+	
 
 	/** Usuario */
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -161,6 +168,14 @@ public class Cancion{
 	/** Setter de la Playlist de la Cancion */
 	public void setPlaylist(Playlist playlist) {
 		this.playlist = playlist;
+	}
+	
+	public int getVecesValorada() {
+		return vecesValorada;
+	}
+
+	public void setVecesValorada(int vecesValorada) {
+		this.vecesValorada = vecesValorada;
 	}
 
 //	/** Getter de los Comentarios de la Cancion */

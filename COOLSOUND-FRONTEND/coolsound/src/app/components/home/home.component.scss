@@ -19,3 +19,22 @@
     margin: 1px;
     text-align: center;
 }
+
+.titulo {
+    text-align: center;
+}
+
+.bloque {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.columns {
+    justify-content: center;
+}
+
+.card {
+    width: 14rem; 
+    margin: 4px;
+}

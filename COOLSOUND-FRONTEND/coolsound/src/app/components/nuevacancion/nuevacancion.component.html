@@ -30,7 +30,7 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="cancion">Canción</label>
+            <label for="cancion">URL de Youtube del Videoclip</label>
             <input type="text" class="form-control" formControlName="cancion" id="cancion" placeholder="Canción...">
             <div class="alert alert-danger" *ngIf="(cancion.touched) && (cancion.invalid)" style="margin-top: 5px;">
                 <span *ngIf="cancion.errors.required">La cancion es requerida</span>

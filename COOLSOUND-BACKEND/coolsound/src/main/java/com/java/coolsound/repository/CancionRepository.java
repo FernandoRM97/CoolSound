@@ -60,5 +60,19 @@ public interface CancionRepository extends JpaRepository<Cancion, Integer>{
     @Transactional
 	@Query(value = "DELETE FROM canciones WHERE cancion_id=?1", nativeQuery = true)
 	void borrarById(int idCancion);
+    
+    /**
+     * 
+     * Canciones mas escuchadas
+     */
+	@Query(value = "SELECT * FROM canciones ORDER BY veces_escuchada DESC LIMIT 4", nativeQuery = true)
+	List<Cancion> masEscuchadas();
+	
+    /**
+     * 
+     * Canciones mejor valoradas
+     */
+	@Query(value = "SELECT * FROM canciones ORDER BY valoracion DESC LIMIT 4", nativeQuery = true)
+	List<Cancion> mejorValoradas();
 	
 }

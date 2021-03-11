@@ -56,7 +56,7 @@ const routes: Routes = [
   { path: 'mimusica/nuevaCancion', component: NuevacancionComponent},
   { path: 'mimusica/nuevaCancion/mimusica', component: MimusicaComponent},
   { path: 'playlist/:idPlaylist', component: PlaylistDetallesComponent},
-  { path: 'musicadetalle/:idCancion', component: MusicadetalleComponent}
+  { path: 'musicadetalle/:idCancion/:valoracion/:vecesValorada', component: MusicadetalleComponent}
 ];
 
 @NgModule({

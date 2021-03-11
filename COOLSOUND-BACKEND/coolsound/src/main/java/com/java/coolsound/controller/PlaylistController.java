@@ -30,6 +30,16 @@ public class PlaylistController {
 	}
 	
 	/**
+	 * Gets the all Playlist by id cancion.
+	 *
+	 * @return the all Playlist
+	 */
+	@GetMapping("/getPlaylists/{idUsuario}")
+	public List<Playlist> getAllPlaylistsById(@PathVariable int idUsuario){
+		return ps.getAllPlaylistsById(idUsuario);
+	}
+	
+	/**
 	 * Añadir Playlist.
 	 *
 	 * @return añadir Playlist

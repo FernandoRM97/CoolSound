@@ -14,6 +14,13 @@ public interface PlaylistService {
 	List<Playlist> getAllPlaylists();
 	
 	/**
+	 * Gets the all Playlists by IdCancion.
+	 *
+	 * @return the all playlists
+	 */
+	List<Playlist> getAllPlaylistsById(int idUsuario);
+	
+	/**
 	 * Añadir Playlists.
 	 *
 	 * @return añadir Playlists

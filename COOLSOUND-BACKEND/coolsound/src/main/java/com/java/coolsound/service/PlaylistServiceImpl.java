@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.java.coolsound.model.Hilo;
 import com.java.coolsound.model.Playlist;
 import com.java.coolsound.model.Usuario;
 import com.java.coolsound.repository.PlaylistRepository;
@@ -55,6 +54,15 @@ public class PlaylistServiceImpl implements PlaylistService {
 	public int eliminarPlaylist(int idPlaylist) {
 		playlistRepository.borrarById(idPlaylist);
 		return idPlaylist;
+	}
+
+	/**
+	 * Sacar las Playlists de BD de un Usuario
+	 * 
+	 */
+	@Override
+	public List<Playlist> getAllPlaylistsById(int idUsuario) {
+		return playlistRepository.getAllPlaylistsById(idUsuario);
 	}
 
 }

@@ -28,17 +28,15 @@
             <option value="10">10</option>
         </select>
         <div class="div">
-            <button class="button div" routerLink="cambiarContrasena" routerLinkActive="active"><p style="color: white;"> Valorar </p></button> <br>
+            <button class="button div" (click)="valorar()" routerLinkActive="active"><p style="color: white;"> Valorar </p></button> <br>
         </div><hr>
 
         <label for="anadir"><b>Añadir a Playlist :</b></label>
-        <div *ngFor="let play of playlist">
             <select name="anadir" id="anadir" class="sidebar-box">
-                <option value="play.idPlaylist">{{play.idPlaylist}}</option>
+                <option *ngFor="let play of playlists" value="{{play.idPlaylist}}">{{play.nombre}}</option>
             </select>
-        </div> 
         <div class="div">
-            <button class="button div" routerLink="cambiarContrasena" routerLinkActive="active"><p style="color: white;"> Añadir </p></button> <br>
+            <button class="button div" (click)="playlist()"><p style="color: white;"> Añadir </p></button> <br>
         </div><hr>
 
         <form [formGroup]="newForm" (ngSubmit)="nuevaFoto(newForm)" method="POST">
@@ -88,7 +86,7 @@
                 <span *ngIf="texto.errors.required">El Texto es un campo requerido</span>
             </div>
         </div>
-        <button [disabled]="!newForm.valid" type="submit" class="btn btn-success" style="margin-right: 10px;">Añadir</button>
+        <button [disabled]="newForm.valid" type="submit" class="btn btn-success" style="margin-right: 10px;">Añadir</button>
     </form>
     <br>
 </div> 

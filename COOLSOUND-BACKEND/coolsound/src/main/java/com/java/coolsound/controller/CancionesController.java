@@ -45,6 +45,64 @@ public class CancionesController {
 	
 	/**
 	 * 
+	 * Cambiar valoracion
+	 * 
+	 * @param idUsuario
+	 * @return
+	 */
+	@GetMapping("/changeValoracion/{valoracion}/{vecesValorada}/{idCancion}")
+	public void changeValoracion(@PathVariable double valoracion, @PathVariable int vecesValorada, @PathVariable int idCancion) {
+		cs.changeValoracion((int) valoracion, vecesValorada, idCancion);
+	}
+	
+	/**
+	 * 
+	 * Cambiar playlist
+	 * 
+	 * @param idUsuario
+	 * @return
+	 */
+	@GetMapping("/changePlaylist/{idCancion}/{idPlaylist}")
+	public void changePlaylist(@PathVariable int idCancion, @PathVariable int idPlaylist) {
+		cs.changePlaylist(idCancion, idPlaylist);
+	}
+	
+	/**
+	 * 
+	 * Veces Escuchada +1
+	 * 
+	 * @param idCancion
+	 * @return
+	 */
+	@GetMapping("/vecesEscuchada/{idCancion}")
+	public void vecesEscuchada(@PathVariable int idCancion) {
+		cs.vecesEscuchada(idCancion);
+	}	
+	
+	/**
+	 * 
+	 * Canciones mas escuchadas
+	 * 
+	 * @return
+	 */
+	@GetMapping("/masEscuchadas")
+	public List<Cancion> masEscuchadas() {
+		return cs.masEscuchadas();
+	}
+	
+	/**
+	 * 
+	 * Canciones mejor Valoradas
+	 * 
+	 * @return
+	 */
+	@GetMapping("/mejorValoradas")
+	public List<Cancion> mejorValoradas() {
+		return cs.mejorValoradas();
+	}
+	
+	/**
+	 * 
 	 * Get the songs
 	 * 
 	 * @param idCancion
@@ -127,5 +185,6 @@ public class CancionesController {
 //	    System.out.println(idUsuario);
 		cs.changeUrl(idCancion, url);
 	}
+	
 
 }

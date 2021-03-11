@@ -17,6 +17,11 @@ export class PlaylistService {
     return this.http.get<Playlist>(`${this.baseUrl}` + 'getPlaylists/');
   }
 
+  /** Método para sacar las canciones de BD */
+  playlistByUser(idUsuario: number): Observable<any> {
+    return this.http.get<Playlist>(`${this.baseUrl}` + 'getPlaylists/' + idUsuario);
+  }
+
   /** Método para añadir Comentarios a BD */
   nuevaPlaylist(texto: string, idUsuario: number): Observable<any> {
     return this.http.get(`${this.baseUrl}` + 'nuevaPlaylist/' + texto + '/' + idUsuario);

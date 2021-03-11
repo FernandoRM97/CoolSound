@@ -6,5 +6,6 @@ export class Cancion {
     portada: string
     valoracion: number
     vecesEscuchada: number
+    vecesValorada: number
     idUsuario: number
 }

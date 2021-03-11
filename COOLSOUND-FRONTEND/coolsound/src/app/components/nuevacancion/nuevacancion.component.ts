@@ -47,8 +47,23 @@ export class NuevacancionComponent implements OnInit {
 
     console.log(this.canc);
 
-    this.cs.nuevaCancion(this.canc.titulo, this.canc.valoracion, this.canc.vecesEscuchada, this.canc.genero, this.idUsu,this.canc.cancion).subscribe();
-    location.reload();
+    this.cs.nuevaCancion(this.canc.titulo, this.canc.valoracion, this.canc.vecesEscuchada, this.canc.genero, this.idUsu,this.canc.cancion).subscribe( data =>{
+      Swal.fire({
+        icon: 'success',
+        title: 'Videoclip registrado con éxito.',
+        showConfirmButton: false,
+        timer: 1500
+      });
+      this.registerForm.reset();
+      this.router.navigate(['mimusica']);
+    }, error => {
+      console.log('Error al añadir el videoclip', error);
+      this.mensajeError = true;
+      setTimeout(() => {
+        this.mensajeError = false;
+      }, 3000);
+    });
+    this.router.navigate['mimusica'];
   }
 
   get titulo() {

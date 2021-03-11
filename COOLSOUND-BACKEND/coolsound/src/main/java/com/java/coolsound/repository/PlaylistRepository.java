@@ -23,6 +23,14 @@ public interface PlaylistRepository extends JpaRepository<Playlist, Integer> {
 	List<Playlist> getAllPlaylists();
 	
 	/**
+	 * Gets the all playlists by IdUsuario.
+	 *
+	 * @return the all playlists
+	 */
+	@Query(value = "SELECT DISTINCT * FROM playlists WHERE usuario_id=?1", nativeQuery = true)
+	List<Playlist> getAllPlaylistsById(int idUsuario);
+	
+	/**
 	 * Borrar playlists
 	 *
 	 * @return playlists

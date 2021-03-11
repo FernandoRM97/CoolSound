@@ -56,4 +56,38 @@ public interface CancionesService {
 	 * @param id de la cancion	
 	 */
 	void changeUrl(int idCancion, String url);
+	
+	/**
+	 * Cambiar la valoracion de una cancion
+	 * @param valoracion
+	 * @param vecesValorada
+	 * @param idCancion
+	 */
+	void changeValoracion(int valoracion, int vecesValorada, int idCancion);
+	
+	/**
+	 * Cambiar la playlist de una cancion
+	 * @param idCancion
+	 * @param idPlaylist
+	 */
+	void changePlaylist(int idCancion, int idPlaylist);
+	
+	/**
+	 * Veces Escuchada +1
+	 * @param idCancion
+	 */
+	void vecesEscuchada(int idCancion);
+	
+	/**
+	 * Canciones Mas Escuchadas
+	 * @return 
+	 */
+	List<Cancion> masEscuchadas();
+	
+	/**
+	 * Canciones Mejor Valoradas
+	 * @return 
+	 */
+	List<Cancion> mejorValoradas();
 }
+
