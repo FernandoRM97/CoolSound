@@ -8,7 +8,7 @@ services:
    volumes:
      - C:\PRUEBA:/app:rw
    ports: 
-     - 3307:3306
+     - 3306:3306
    container_name: coolsound
    
   app:
@@ -22,3 +22,35 @@ services:
     environment:
       PMA_HOST: db
 
+  wildfly:
+    image: "metz/wildfly"
+    container_name: "wildfly"
+    environment:
+      - JAVA_OPTS=-server -Xms64m -Xmx2G -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=2G -XX:+UseAdaptiveSizePolicy -XX:MaxMetaspaceSize=1024m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true-Djava.net.preferIPv4Stack=true
+      - WILDFLY_USER=root
+      - WILDFLY_PASS=root
+      - DB_NAME=coolsound
+      - DB_USER=root
+      - DB_PASS=root
+      - DB_URI=db:3306
+    ports:
+      - "8081:8080"
+      - "9990:9990"
+    volumes:
+      - C:\PRUEBA:/app:rw
+
+  apache:
+    image: 'bitnami/apache:latest'
+    ports:
+      - '8082:8080'
+      - '443:8443'
+    volumes:
+      - C:\PRUEBA:/app:rw
+
+  jenkins:
+    user: root
+    image: "jenkinsci/blueocean:1.23.1"
+    ports:
+      - "8085:8080"
+    volumes:
+      - C:\PRUEBA:/app:rw

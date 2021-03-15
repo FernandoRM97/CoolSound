@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 
 export class UsuarioService {
 
-  private baseUrl = '/usuarios/';
+  private baseUrl = '/coolsound/usuarios/';
 
   user: Usuario = new Usuario();
   usuario: Usuario = new Usuario();

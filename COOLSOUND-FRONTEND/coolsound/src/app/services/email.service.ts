@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class EmailService {
 
-  private baseUrl = '/email/';
+  private baseUrl = '/coolsound/email/';
 
   constructor(private http: HttpClient, private router: Router) {}
 

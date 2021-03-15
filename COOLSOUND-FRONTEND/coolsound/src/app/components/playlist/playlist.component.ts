@@ -35,7 +35,7 @@ export class PlaylistComponent implements OnInit {
 
   eliminar(idPlaylist : number):void {
     this.ps.eliminarPlaylist(idPlaylist).subscribe();
-    location.reload();  
+    //location.reload();  
   }
 
   nuevaPlaylist(){

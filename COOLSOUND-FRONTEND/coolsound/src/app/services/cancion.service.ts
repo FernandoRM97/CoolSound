@@ -8,7 +8,7 @@ import { Cancion } from '../model/cancion';
 })
 export class CancionService {
 
-  private baseUrl = '/canciones/';
+  private baseUrl = '/coolsound/canciones/';
 
   constructor(private http: HttpClient) { }
 

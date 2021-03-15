@@ -8,7 +8,7 @@ import { Hilo } from '../model/hilo';
 })
 export class HiloService {
 
-  private baseUrl = '/hilo/';
+  private baseUrl = '/coolsound/hilo/';
 
   constructor(private http: HttpClient) { }
 

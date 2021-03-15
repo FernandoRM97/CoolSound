@@ -80,7 +80,8 @@ export class MusicadetalleComponent implements OnInit {
         timer: 1500
       });
     });
-  
+    location.reload();
+    
   }
 
   eliminar(idComentarioCancion : number):void {

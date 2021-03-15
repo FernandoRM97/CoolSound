@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.java.coolsound.controller;
 
 import java.util.List;

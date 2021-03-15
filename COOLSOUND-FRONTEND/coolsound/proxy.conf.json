@@ -1,140 +1,140 @@
 {
-  "/usuarios": {
+  "/coolsound/usuarios": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/addusuario": {
+  "/coolsound/addusuario": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/canciones": {
+  "/coolsound/canciones": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/email": {
+  "/coolsound/email": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/usuarios/changeUrl": {
+  "/coolsound/usuarios/changeUrl": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/usuarios/changePass": {
+  "/coolsound/usuarios/changePass": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/hilo":{
+  "/coolsound/hilo":{
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/hilo/eliminarHilo":{
+  "/coolsound/hilo/eliminarHilo":{
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/hilo/nuevoHilo":{
+  "/coolsound/hilo/nuevoHilo":{
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/comentarios":{
+  "/coolsound/comentarios":{
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/comentarios/nuevoComentario":{
+  "/coolsound/comentarios/nuevoComentario":{
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/usuarios/getusuarios": {
+  "/coolsound/usuarios/getusuarios": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/usuarios/eliminarUsuario": {
+  "/coolsound/usuarios/eliminarUsuario": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/canciones/eliminarcancion": {
+  "/coolsound/canciones/eliminarcancion": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/playlist/getPlaylists": {
+  "/coolsound/playlist/getPlaylists": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/playlist/nuevaPlaylist": {
+  "/coolsound/playlist/nuevaPlaylist": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/playlist/eliminarPlaylist": {
+  "/coolsound/playlist/eliminarPlaylist": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/canciones/nuevaCancion": {
+  "/coolsound/canciones/nuevaCancion": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/canciones/getCanciones": {
+  "/coolsound/canciones/getCanciones": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/comentarioCancion/getComentarioCancion": {
+  "/coolsound/comentarioCancion/getComentarioCancion": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/comentarioCancion/eliminarComentarioCancion": {
+  "/coolsound/comentarioCancion/eliminarComentarioCancion": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/comentarioCancion/nuevoComentarioCancion": {
+  "/coolsound/comentarioCancion/nuevoComentarioCancion": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/comentarioCancion/cambiarFoto": {
+  "/coolsound/comentarioCancion/cambiarFoto": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/canciones/changeValoracion": {
+  "/coolsound/canciones/changeValoracion": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/canciones/changePlaylist": {
+  "/coolsound/canciones/changePlaylist": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/canciones/vecesEscuchada": {
+  "/coolsound/canciones/vecesEscuchada": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/canciones/masEscuchadas": {
+  "/coolsound/canciones/masEscuchadas": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
   },
-  "/canciones/mejorValoradas": {
+  "/coolsound/canciones/mejorValoradas": {
     "target": "http://localhost:8080",
     "secure": true,
     "logLevel": "debug"
